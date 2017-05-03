@@ -26,5 +26,26 @@ namespace DarrylSite.Controllers
 
             return View();
         }
+
+        public ActionResult Seller()
+        {
+            ViewBag.Message = "Your seller page.";
+
+            return View();
+        }
+
+        public ActionResult Private()
+        {
+            ViewBag.Message = "Private, secured page.";
+
+            return View();
+        }
+
+        public ActionResult Resources()
+        {
+            ViewBag.Message = "Your Resource page.";
+
+            return View();
+        }
     }
 }
