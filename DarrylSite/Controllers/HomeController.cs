@@ -30,6 +30,7 @@ namespace DarrylSite.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Seller()
         {
             ViewBag.Message = "Your seller page.";
@@ -44,7 +45,16 @@ namespace DarrylSite.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Resources()
+        {
+            ViewBag.Message = "Your Resource page.";
+
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult ReturnFromPayPal()
         {
             ViewBag.Message = "Your Resource page.";
 

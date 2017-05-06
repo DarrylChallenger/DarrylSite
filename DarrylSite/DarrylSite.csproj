@@ -271,6 +271,7 @@
     <Content Include="Views\Home\Seller.cshtml" />
     <Content Include="Views\Home\Resources.cshtml" />
     <Content Include="Views\Home\Private.cshtml" />
+    <Content Include="Views\Home\ReturnFromPayPal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
