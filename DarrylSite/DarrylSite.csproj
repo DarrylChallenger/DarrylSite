@@ -199,6 +199,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -272,6 +273,9 @@
     <Content Include="Views\Home\Resources.cshtml" />
     <Content Include="Views\Home\Private.cshtml" />
     <Content Include="Views\Home\ReturnFromPayPal.cshtml" />
+    <Content Include="Views\Tests\_TestsLayout.cshtml" />
+    <Content Include="Views\Tests\_ViewStart.cshtml" />
+    <Content Include="Views\Tests\Text.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
