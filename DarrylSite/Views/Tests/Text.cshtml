@@ -6,24 +6,60 @@
 
 <h1>Text</h1>
 
-<section class="centertxtingrid1">
-    <h2 class="well-lg">Center Text in grid boxes (#1)</h2>
+<section class="CenterTextInGridPadding">
+    <h2 class="well-lg">Center Text in grid boxes with padding (#1): text items: text-align:center;, col items: padding:n(px,em) 0;
+
+</h2>
     <div class="row myRow1">
         <!--row>-->
         <div class="col-sm-6 myCol1">
-            <p class="myText">Row1Col1 - short text</p>
+            <p class="myText2">Centered extra, extra, really, really, long text: text items|text-align:center; col items|padding:n(px,em) 0;</p>
         </div>
         <div class="col-sm-6 myCol2">
-            <p  class="myText">Row1Col2 - short text</p>
+            <p  class="myText2 myText3">Centered extra, extra, really, really, long text that doesn't go end to end: text items|text-align:center; col items|padding:n(px,em) n;</p>
         </div>
     </div> <!--row>-->
     <div class="row myRow2">
         <!--row>-->
         <div class="col-sm-6 myCol3">
-            <p class="myText2">Row2Col1 - short text</p>
+            <p class="myText">Row2Col1 - short text</p>
         </div>
         <div class="col-sm-6 myCol4">
             <p class="myText">Row2Col2 - short text</p>
         </div>
     </div> <!--row>-->
 </section>
+
+<section class="CenterTextInGridWithWidth">
+    <h2 class="well-lg">
+        Center Text in grid boxes (#2): column gets .displayflex and .div between col and displayed items gets.centereddiv
+    </h2>
+    <div class="row myBorder"> <!--row>-->
+        <div class="col-sm-6 myCol displayflex">
+            <div class="centereddiv myBorder2">
+                <p class="myBorder">Centered extra, extra, really, really, long text: </p>
+                <p class="myBorder">Second centered extra, extra, really, really, long text: </p>
+            </div>
+        </div>
+        <div class="col-sm-6 myCol displayflex">
+            <div class="centereddiv myBorder2">
+                <p class="myBorder">Centered extra, extra, really, really, long text that doesn't go end to end: </p>
+                <p class="myBorder">Second centered extra, extra, really, really, long text that doesn't go end to end: </p>
+            </div>
+        </div>
+    </div> <!--row>-->
+    <div class="row myBorder">
+        <!--row>-->
+        <div class="col-sm-6 myCol displayflex">
+            <div class="centereddiv myBorder2">
+                <p class="myBorder">Row2Col1 - short text</p>
+            </div>
+        </div>
+        <div class="col-sm-6 displayflex">
+            <div class="centereddiv myBorder2">
+                <p class="myBorder">Row2Col2 - short text</p>
+            </div>
+            </div>
+    </div> <!--row>-->
+</section>
+

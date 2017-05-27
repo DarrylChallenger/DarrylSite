@@ -32,21 +32,29 @@ textarea {
 
 }
 
-.myRow1, .myRow2 {
+.myRow1, .myRow2, .myBorder {
     border-style:solid;
     border-color:blue;
 }
 
-.myCol1, .myCol3, .myCol4 {
+.myBorder2 {
+    border-style:solid;
+    border-color:green;
+}
+
+.myCol{
+    border-style:solid;
+    border-color:red;
+}
+
+.myCol1, .myCol4 {
     border-style:solid;
     border-color:red;
     padding:70px 0;
 }
-
-.myCol2 {
+.myCol2, .myCol3 {
+    padding:70px 1em;
     border-style:solid;
-    border-color:red;
-    padding:70px 0;
 }
 
 .myText {
@@ -55,5 +63,18 @@ textarea {
 .myText2 {
     border-style:solid;
     border-color:green;
+    text-align:center;
+}
+
+.myText3 {
+}
+
+.displayflex {
+    display:flex;
+    justify-content:center;
+}
+
+.centereddiv {
+    width: 75% ;
     text-align:center;
 }
