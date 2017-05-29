@@ -276,6 +276,7 @@
     <Content Include="Views\Tests\_TestsLayout.cshtml" />
     <Content Include="Views\Tests\_ViewStart.cshtml" />
     <Content Include="Views\Tests\Text.cshtml" />
+    <Content Include="Views\Tests\Media.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,5 +17,9 @@ namespace DarrylSite.Controllers
         {
             return View();
         }
+        public ActionResult Media()
+        {
+            return View();
+        }
     }
 }
