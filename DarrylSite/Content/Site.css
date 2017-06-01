@@ -95,17 +95,29 @@ textarea {
         border-color: green;
     }
 }
-@media only screen and (min-width:992px) and (min-width:1200px)  {
+@media only screen and (min-width:992px) {
     .Media1 p {
         border-style: solid;
         border-color: red;
     }
 }
-/*
+
 @media only screen and (min-width:1200px) {
     .Media1 p {
         border-style: solid;
         border-color: black;
     }
 }
-    */
+
+.Text3 p {
+    border-style: solid;
+    border-color: orange;
+}
+
+.eqHeightCols {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+}
