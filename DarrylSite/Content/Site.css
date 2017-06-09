@@ -109,9 +109,13 @@ textarea {
     }
 }
 
+.EqColHeights {
+   border-style: solid;
+   border-color:red;
+ }
 .Text3 p {
     border-style: solid;
-    border-color: orange;
+    border-color: purple;
 }
 
 .eqHeightCols {
@@ -120,4 +124,40 @@ textarea {
     display: -ms-flexbox;
     display:         flex;
     flex-wrap: wrap;
+}
+
+.row > [class*='col-'] {
+    display:flex;
+    flex-direction:column;
+}
+
+
+img.rightimage {
+    width:330px;
+    height:341px;
+    float:initial;
+    border-style:solid;
+    border-color:orange;
+    border-width:10px;
+}
+
+img.leftimage {
+    width:330px;
+    height:341px;
+    float:initial;
+    border-style:solid;
+    border-color:blue;
+    border-width:10px;
+}
+@media only screen and (min-width:768px) {
+    img.leftimage, img.rightimage {
+        float:left;
+        border-color:green;
+        border-width:10px;
+    }
+    img.rightimage {
+        float:right;
+        border-color:red;
+        border-width:10px;
+    }
 }
