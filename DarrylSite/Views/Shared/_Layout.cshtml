@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Challenger LLC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand brandtext" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -45,6 +45,9 @@
         </div>
     </div>
     <div class="container body-content">
+        <p class="randomtext" id="rndText"></p>
+        <br />
+        <p class="randomtext2"></p>
         @RenderBody()
         <hr />
         <footer>

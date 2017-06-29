@@ -212,14 +212,19 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Images\DAMN Map.jpg" />
     <Content Include="Images\DC.png" />
     <Content Include="Images\DCsq.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\FB-f-Logo__blue_29.png" />
     <Content Include="Images\GlobalGoalsWithWoman.jpg" />
+    <Content Include="Images\In-2C-28px-R.png" />
+    <Content Include="Images\Instagrarm-glyph-logo_May2016.png" />
     <Content Include="Images\Mosaic.jpg" />
+    <Content Include="Images\Twitter_Social_Icon_Rounded_Square_Color.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -235,6 +240,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\RandomText.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -281,6 +287,7 @@
     <Content Include="Views\Tests\_ViewStart.cshtml" />
     <Content Include="Views\Tests\Text.cshtml" />
     <Content Include="Views\Tests\Media.cshtml" />
+    <Content Include="Views\Tests\Social.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

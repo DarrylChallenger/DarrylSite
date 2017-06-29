@@ -21,5 +21,9 @@ namespace DarrylSite.Controllers
         {
             return View();
         }
+        public ActionResult Social()
+        {
+            return View();
+        }
     }
 }
