@@ -4,9 +4,12 @@
     --EquityGrey: #06c;
 }
 */
+html {
+}
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    height:100%;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -45,7 +48,7 @@ textarea {
 .centertxtingrid1{
 
 }
-
+/* Text Page */
 .myRow1, .myRow2, .myBorder {
     border-style:solid;
     border-color:blue;
@@ -61,10 +64,11 @@ textarea {
     border-color:red;
 }
 
+/* make the padding the same in all columns to force them to line up */
 .myCol1, .myCol4 {
     border-style:solid;
     border-color:red;
-    padding:70px 0;
+    padding:50px 0;
 }
 .myCol2, .myCol3 {
     padding:70px 1em;
@@ -93,6 +97,36 @@ textarea {
     text-align:center;
 }
 
+.AnImage{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.SomeText {
+    position:absolute;
+    bottom:10px;
+    right:50px;
+    color:white;
+}
+
+.EqColHeights {
+   border-style: solid;
+   border-color:red;
+ }
+.Text3 p {
+    border-style: solid;
+    border-color: purple;
+}
+
+.eqHeightCols {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+}
+
+/*Media*/
 .Media1 p {
     border-style: solid;
     border-color: blue;
@@ -116,22 +150,6 @@ textarea {
         border-style: solid;
         border-color: black;
     }
-}
-
-.EqColHeights {
-   border-style: solid;
-   border-color:red;
- }
-.Text3 p {
-    border-style: solid;
-    border-color: purple;
-}
-
-.eqHeightCols {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display:         flex;
-    flex-wrap: wrap;
 }
 
 .row > [class*='col-'] {
@@ -169,15 +187,120 @@ img.leftimage {
         border-width:10px;
     }
 }
-.AnImage{
-    position:relative;
-    width:100%;
-    height:100%;
+
+/* Images*/
+.BlueEffect {
+    /*background-image:url("../Images/BlueBlock.jpg");*/
+}
+.BlueEffect2 {
+    /*background-image:url("../Images/BlueBlock.jpg");*/
+}
+.BlueFilter {   
+    opacity:.3;
+    /*background: rgba(0, 0, 0, 0.3);  */
+}
+.opacity0 { 
+    opacity:.0;
 }
 
-.SomeText {
-    position:absolute;
-    bottom:10px;
-    right:50px;
-    color:white;
+.opacity1 {
+    opacity:.1;
+}
+
+.opacity2 {
+    opacity:.2;
+}
+
+.opacity25 {
+    opacity:.25;
+}
+
+.opacity3 {
+    opacity:.3;
+}
+
+.opacity4 {
+    opacity:.4;
+}
+
+.BlueFilter2a {   
+    background-image:url("../Images/DCsq.png");
+    height:256px;
+    width:256px;
+    opacity:.3;
+    /*background: rgba(0, 0, 0, 0.3);  */
+}
+
+.BlueFilter2b {   
+    background-image:url("../Images/DCsqBW.png");
+    height:256px;
+    width:256px;
+    /*background: rgba(0, 0, 0, 0.3);  */
+}
+
+
+.OrigFilterA {   
+    background-image:url("../Images/DCsq.png");
+    height:256px;
+    width:256px;
+    opacity:.7;
+}
+
+.OrigFilterB {   
+    background-image:url("../Images/DCsqBW.png");
+    height:256px;
+    width:256px;
+    /*background: rgba(0, 0, 0, 0.3);  */
+}
+
+.OrigEffect
+{
+    text-align:center;
+    margin:0 auto;
+    position:relative;
+}
+
+.OrigLabelA {
+    color:red;
+    font-weight:700;
+    text-align:center;
+    border-style:solid;
+    border-color:red;
+    text-align:center;
+}
+
+.pad256 {
+    padding:0 0;
+    border-style:solid;
+    border-color:orange;
+
+}
+
+.OrigHide {
+    color:green;
+    font-weight:700;
+    text-align:center;
+    border-style:solid;
+    border-color:green;
+}
+
+.imagepage {
+ /*background-image: url("http://www.impawards.com/tv/posters/glee_ver9_xlg.jpg");*/
+     background-image:url("../Images/BlueCirc.jpg");
+     width:300px;
+     height:300px;
+    background-attachment: fixed;
+    /*/background-size: 100%;*/
+}
+.tint {
+    z-index: 1;
+ height: 100%;
+width: 100%;
+position: absolute;
+top: 0px;
+left: 0px;
+background: rgba(0, 0, 0, 0.7);    
+}
+.whitecontent {
+ color: white;
 }

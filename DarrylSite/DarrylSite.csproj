@@ -212,6 +212,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Images\BlueBlock.jpg" />
+    <Content Include="Images\BlueCirc.jpg" />
     <Content Include="Images\DAMN Map.jpg" />
     <Content Include="Images\DC.png" />
     <Content Include="Images\DCsq.png" />
@@ -219,11 +221,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\DCsqBW.png" />
     <Content Include="Images\FB-f-Logo__blue_29.png" />
     <Content Include="Images\GlobalGoalsWithWoman.jpg" />
     <Content Include="Images\In-2C-28px-R.png" />
     <Content Include="Images\Instagrarm-glyph-logo_May2016.png" />
     <Content Include="Images\Mosaic.jpg" />
+    <Content Include="Images\RedBlock.jpg" />
     <Content Include="Images\Twitter_Social_Icon_Rounded_Square_Color.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -232,6 +236,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\DarrylSite20170501025647.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Images.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -288,6 +293,7 @@
     <Content Include="Views\Tests\Text.cshtml" />
     <Content Include="Views\Tests\Media.cshtml" />
     <Content Include="Views\Tests\Social.cshtml" />
+    <Content Include="Views\Tests\Images.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
