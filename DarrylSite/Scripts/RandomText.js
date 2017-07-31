@@ -13,7 +13,8 @@
 "Too much of a good thing",
 "Method to my madness",
 "Fight fire with fire",
-"All's well that ends well"];
+"All's well that ends well",
+"The person who says it cannot be done should not interrupt the person doing it"];
 
 var s = document.getElementsByClassName("randomtext");
 var r = Math.random() * quotes.length;
