@@ -97,7 +97,7 @@ textarea {
     text-align:center;
 }
 
-.AnImage{
+.AnImageContainer{
     position:relative;
     width:100%;
     height:100%;
@@ -124,6 +124,20 @@ textarea {
     display: -ms-flexbox;
     display:         flex;
     flex-wrap: wrap;
+}
+
+.TextInBoxesRows1 {
+    margin-left:5em;
+    margin-right:5em;
+}
+
+.TextInBoxesRows2 {
+    margin-left:5em;
+    margin-right:5em;
+}
+
+.DetailedText {
+    font-size:1.5em;
 }
 
 /*Media*/
@@ -176,10 +190,13 @@ img.leftimage {
     border-width:10px;
 }
 @media only screen and (min-width:768px) {
-    img.leftimage, img.rightimage {
+    img.leftimage {
         float:left;
-        border-color:green;
+        border-color:white;
         border-width:10px;
+        border-top-width:0;
+        height: 100px;
+        width:100px;
     }
     img.rightimage {
         float:right;
@@ -187,6 +204,8 @@ img.leftimage {
         border-width:10px;
     }
 }
+
+
 
 /* Images*/
 .BlueEffect {
@@ -264,7 +283,7 @@ img.leftimage {
     color:red;
     font-weight:700;
     text-align:center;
-    border-style:solid;
+    border-style:;
     border-color:red;
     text-align:center;
 }
@@ -303,4 +322,36 @@ background: rgba(0, 0, 0, 0.7);
 }
 .whitecontent {
  color: white;
+}
+/* Forms */
+.boxed {
+    border-style:solid;
+    border-color:black;
+}
+
+
+
+
+@media only screen and (min-width: 1) and (orientation:landscape) 
+{
+    .TstBullet {
+	    display:inherit;
+    }
+    .TstSmBullet,  .noCABPic {
+	    display:inherit;
+    }
+	.PressC{
+	background-color:red;
+    }
+}
+
+
+.PressD {
+	min-height:400px;
+	max-height:400px;
+	overflow:auto;
+	position:relative;
+    border-style:solid;
+	border-color:black;
+	border-width:1px;
 }

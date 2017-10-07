@@ -14,7 +14,13 @@
 "Method to my madness",
 "Fight fire with fire",
 "All's well that ends well",
-"The person who says it cannot be done should not interrupt the person doing it"];
+"The person who says it cannot be done should not interrupt the person doing it",
+"The only person you are destined to become is the one you decide to be",
+"Happiness depends upon ourselves",
+"Worrying is like paying a debt you don’t owe",
+"Fortune favors the bold",
+"We do not inherit the Earth from our ancestors, we borrow it from our children",
+"esse quam videri (be rather than seem)"];
 
 var s = document.getElementsByClassName("randomtext");
 var r = Math.random() * quotes.length;

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using DarrylSite.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
@@ -16,7 +17,7 @@ namespace DarrylSite
         // In this method we will create default User roles and Admin user for login   
         private void createRolesandUsers()
         {
-            Models.ApplicationDbContext context = new Models.ApplicationDbContext();
+            Models.ApplicationDbContext context = new Models.ApplicationDbContext(); //https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             var UserManager = new UserManager<Models.ApplicationUser>(new UserStore<ApplicationUser>(context));
@@ -48,16 +49,16 @@ namespace DarrylSite
 
                 }
             }
-            /*
+            
             // creating Creating Manager role    
-            if (!roleManager.RoleExists("Manager"))
+            if (!roleManager.RoleExists("Visitor"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Manager";
+                role.Name = "Visitor";
                 roleManager.Create(role);
 
             }
-
+            /*
             // creating Creating Employee role    
             if (!roleManager.RoleExists("Employee"))
             {

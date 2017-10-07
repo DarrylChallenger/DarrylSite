@@ -29,5 +29,9 @@ namespace DarrylSite.Controllers
         {
             return View();
         }
+        public ActionResult Forms()
+        {
+            return View();
+        }
     }
 }
