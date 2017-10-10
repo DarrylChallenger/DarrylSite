@@ -283,9 +283,8 @@ img.leftimage {
     color:red;
     font-weight:700;
     text-align:center;
-    border-style:;
+    border-style:dotted;
     border-color:red;
-    text-align:center;
 }
 
 .pad256 {

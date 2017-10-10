@@ -11,6 +11,7 @@ namespace DarrylSite
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/Images.js",
+                        "~/Scripts/Media.js",
                         "~/Scripts/RandomText.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
