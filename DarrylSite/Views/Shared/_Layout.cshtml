@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>@*
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
@@ -19,10 +19,8 @@
         window.appInsights=appInsights;
         appInsights.trackPageView();
     </script>
-*@</head>
+</head>
 <body>
-    @RenderBody()
-    @*
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -60,5 +58,5 @@
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
-    *@</body>
+    </body>
 </html>
