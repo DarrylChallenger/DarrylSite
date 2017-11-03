@@ -346,11 +346,11 @@ background: rgba(0, 0, 0, 0.7);
 
 
 .PressD {
-	min-height:400px;
-	max-height:400px;
-	overflow:auto;
-	position:relative;
-    border-style:solid;
-	border-color:black;
-	border-width:1px;
+    min-height: 400px;
+    max-height: 400px;
+    overflow: auto;
+    position: relative;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }

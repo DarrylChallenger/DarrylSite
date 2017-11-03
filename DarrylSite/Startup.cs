@@ -19,6 +19,7 @@ namespace DarrylSite
         {
             Models.ApplicationDbContext context = new Models.ApplicationDbContext(); //https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97
 
+            string s = context.Database.Connection.DataSource.ToString();
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             var UserManager = new UserManager<Models.ApplicationUser>(new UserStore<ApplicationUser>(context));
 

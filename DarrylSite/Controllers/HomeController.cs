@@ -11,6 +11,11 @@ namespace DarrylSite.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+            ViewBag.displayItems = "N";
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewBag.displayItems = "Y";
+            }
             return View();
         }
 
