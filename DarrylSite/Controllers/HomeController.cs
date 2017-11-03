@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarrylSite.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,9 +13,15 @@ namespace DarrylSite.Controllers
         public ActionResult Index()
         {
             ViewBag.displayItems = "N";
+            ViewBag.isAdmin = "N";
             if (User.Identity.IsAuthenticated)
             {
                 ViewBag.displayItems = "Y";
+            }
+
+            if (isAdminUser())
+            {
+                ViewBag.isAdmin = "Y";
             }
             return View();
         }
@@ -45,7 +52,7 @@ namespace DarrylSite.Controllers
 
         public ActionResult Private()
         {
-            ViewBag.Message = "Private, secured page.";
+            ViewBag.Message = "Test pages.";
 
             return View();
         }
@@ -64,6 +71,26 @@ namespace DarrylSite.Controllers
             ViewBag.Message = "Your Resource page.";
 
             return View();
+        }
+
+        private Boolean isAdminUser()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                ApplicationDbContext context = new ApplicationDbContext();
+                var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                var s = UserManager.GetRoles(user.GetUserId());
+                if (s[0].ToString() == "Admin")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }

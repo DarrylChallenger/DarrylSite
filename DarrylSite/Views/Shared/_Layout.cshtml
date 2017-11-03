@@ -37,11 +37,13 @@
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li>@Html.ActionLink("Seller", "Seller", "Home")</li>
-                        <li>@Html.ActionLink("Private", "Private", "Home")</li>
-                        @if (@ViewBag.displayItems == "Y") {
-                           <li>@Html.ActionLink("Seller (Auth)", "Seller", "Home")</li>
-                          <li>@Html.ActionLink("Private (Auth)", "Private", "Home")</li>
+                        <li>@Html.ActionLink("Tests", "Private", "Home")</li>
+                        @if (@ViewBag.displayItems == "Y")
+                        {
+                            <li>@Html.ActionLink("Seller (Auth)", "Seller", "Home")</li>
                         }
+                        @if (@ViewBag.isAdmin == "Y")
+                        { }
                         <li>@Html.ActionLink("Resources", "Resources", "Home")</li>
                     </ul>
                     @Html.Partial("_LoginPartial")
