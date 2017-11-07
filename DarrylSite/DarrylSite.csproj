@@ -234,6 +234,7 @@
     <Content Include="Images\Instagrarm-glyph-logo_May2016.png" />
     <Content Include="Images\Mosaic.jpg" />
     <Content Include="Images\RedBlock.jpg" />
+    <Content Include="Images\Stripe-blue-on-light.png" />
     <Content Include="Images\Twitter_Social_Icon_Rounded_Square_Color.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

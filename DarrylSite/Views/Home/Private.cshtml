@@ -1,8 +1,11 @@
 ﻿
 @{
     Layout = "~/Views/Tests/_TestsLayout.cshtml";
-    ViewBag.Title = "Private";
+    ViewBag.Title = "Tests (formerly Private)";
 }
 
-<h2>Private</h2>
-
+<h2>Tests</h2>
+<h3>Configuration Data</h3>
+<p>WEBSITE_NODE_DEFAULT_VERSION:@ViewBag.wndvw</p>
+<p>StripePrivateKey:@ViewBag.StripePrivateKey</p>
+<p>ClientValidationEnabled:@ViewBag.ClientValidationEnabled</p>

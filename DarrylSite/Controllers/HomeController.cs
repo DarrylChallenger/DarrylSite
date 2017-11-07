@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -55,6 +56,9 @@ namespace DarrylSite.Controllers
         public ActionResult Private()
         {
             ViewBag.Message = "Test pages.";
+            ViewBag.wndvw = ConfigurationManager.AppSettings["WEBSITE_NODE_DEFAULT_VERSION"];
+            ViewBag.StripePrivateKey = ConfigurationManager.AppSettings["StripePrivateKey"];
+            ViewBag.ClientValidationEnabled = ConfigurationManager.AppSettings["ClientValidationEnabled"];
 
             return View();
         }
