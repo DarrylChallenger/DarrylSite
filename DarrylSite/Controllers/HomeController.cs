@@ -70,7 +70,15 @@ namespace DarrylSite.Controllers
         [AllowAnonymous]
         public ActionResult ReturnFromPayPal()
         {
-            ViewBag.Message = "Your Resource page.";
+            ViewBag.Message = "Return From PayPal page.";
+
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult ReturnFromStripe()
+        {
+            ViewBag.Message = "Return From Stripe page.";
 
             return View();
         }
