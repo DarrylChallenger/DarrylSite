@@ -57,7 +57,8 @@ namespace DarrylSite.Controllers
         {
             ViewBag.Message = "Test pages.";
             ViewBag.wndvw = ConfigurationManager.AppSettings["WEBSITE_NODE_DEFAULT_VERSION"];
-            ViewBag.StripePrivateKey = ConfigurationManager.AppSettings["StripePrivateKey"];
+            ViewBag.StripeSecretKey = ConfigurationManager.AppSettings["StripeSecretKey"]; 
+            ViewBag.StripePublishableKey = ConfigurationManager.AppSettings["StripePublishableKey"]; 
             ViewBag.ClientValidationEnabled = ConfigurationManager.AppSettings["ClientValidationEnabled"];
 
             return View();
