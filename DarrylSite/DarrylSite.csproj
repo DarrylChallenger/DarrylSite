@@ -306,6 +306,7 @@
     <Content Include="Views\Tests\Images.cshtml" />
     <Content Include="Views\Tests\Forms.cshtml" />
     <Content Include="Views\Home\ReturnFromStripe.cshtml" />
+    <Content Include="Views\Home\Charge.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,7 @@
 ﻿using DarrylSite.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Stripe;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -49,6 +50,7 @@ namespace DarrylSite.Controllers
         public ActionResult Seller()
         {
             ViewBag.Message = "Your seller page.";
+            ViewBag.StripePublishableKey = ConfigurationManager.AppSettings["StripePublishableKey"];
 
             return View();
         }
@@ -88,6 +90,30 @@ namespace DarrylSite.Controllers
             return View();
         }
 
+        public ActionResult Charge(string stripeEmail, string stripeToken) // Called by form on Seller page
+        {
+            var customers = new StripeCustomerService();
+            var charges = new StripeChargeService();
+
+            var customer = customers.Create(new StripeCustomerCreateOptions
+            {
+                Email = stripeEmail,
+                SourceToken = stripeToken
+            });
+
+            var charge = charges.Create(new StripeChargeCreateOptions
+            {
+                Amount = 500,//charge in cents
+                Description = "Sample Charge",
+                Currency = "usd",
+                CustomerId = customer.Id
+            });
+
+            // further application specific code goes here
+
+            return View();
+        }
+         
         private Boolean isAdminUser()
         {
             if (User.Identity.IsAuthenticated)

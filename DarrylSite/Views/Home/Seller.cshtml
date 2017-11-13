@@ -30,4 +30,18 @@
     <img src="~/Images/Stripe-blue-on-light.png" />
 </a>
 <p>Buy Direct</p>
+<p>Stripe Key:@ViewBag.StripePublishableKey</p>
+@* Allow for user to enter amount*@
+<form action="/Home/Charge" method="POST">
+    <article>
+        <label>Amount: $5.00</label>
+    </article>
+    <script src="//checkout.stripe.com/v2/checkout.js"
+            class="stripe-button"
+            data-key="@ViewBag.StripePublishableKey"
+            data-locale="auto"
+            data-description="Sample Charge"
+            data-amount="500">
+    </script>
+</form>
 <p>Buy via Destination</p>
