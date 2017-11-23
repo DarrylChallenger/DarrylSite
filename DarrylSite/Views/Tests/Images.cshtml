@@ -3,8 +3,44 @@
     ViewBag.Title = "Images";
     Layout = "~/Views/Tests/_TestsLayout.cshtml";
 }
-
 <h2>Images</h2>
+<div class="Logos">
+    <h3>Logo Variations</h3>
+    <img src="~/Images/DC LOGO Grey Paper Field.png" /><p></p>
+    <img src="~/Images/DC LOGO Purple Paper Field.png" /><p></p>
+    <img src="~/Images/DC LOGO Metal Field.png" />
+
+</div>
+<div class="ImageInDiv">
+    <h2>Image In Div</h2>
+    <div class="ImageInDivWrapper">
+        <img class="ImageInDivImg img-responsive" src="~/Images/equity_V3-03blue.png" width="892" height="231" />
+    </div>
+</div>
+<div class="sameheightcols">
+    <div class="row SHCRow">
+        <div>
+            <div class="col-md-4 SHCBox">
+                @*<div class="SHCHeightBox"></div>*@
+                <a class="SHCLink" href="#"> 
+                    <img class="SHCImage" src="~/Images/equity_V3-03blue.png" />
+                </a>
+            </div>
+            <div class="col-md-4 SHCBox">
+                @*<div class="SHCHeightBox"></div>*@
+                <a class="SHCLink" href="#">
+                    <img class="SHCImage" src="~/Images/001-graphic.png" />
+                </a>
+            </div>
+            <div class="col-md-4 SHCBox">
+                @*<div class="SHCHeightBox"></div>*@
+                <a class="SHCLink" href="#">
+                    <img class="SHCImage" src="~/Images/DC LOGO Purple Paper Field.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 <h3>Display a plain image</h3>
 <img src="~/Images/DCsqBW.png"/>
 
