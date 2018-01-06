@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -37,6 +38,13 @@ namespace DarrylSite.Controllers
         public ActionResult Private()
         {
             ViewBag.Message = "Private, secured page.";
+
+            return View();
+        }
+
+        public ActionResult Blog()
+        {
+            ViewBag.Message = "My blog page.";
 
             return View();
         }
