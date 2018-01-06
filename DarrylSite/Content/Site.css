@@ -170,7 +170,41 @@ textarea {
     display:flex;
     flex-direction:column;
 }
+.boxed {
+    border-style:solid;
+    border-width:2px;
+}
 
+.containerstyle {
+    display:inline-block;
+}
+
+.red {
+    color:red;
+}
+
+.outcol {
+    width: 100%;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.onecol {
+    width: 65%;
+    display: inline-block;
+    font-weight: 700;
+    margin-left:0;
+    margin-right:0;
+    /font-size: 2em;
+}
+
+.twocol {
+    width: 33%;
+    display: inline-block;
+    vertical-align:top;
+    /float:right;
+}
 
 img.rightimage {
     width:330px;
