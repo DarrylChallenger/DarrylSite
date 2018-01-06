@@ -78,8 +78,17 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stripe.net, Version=11.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.net.11.7.1\lib\net45\Stripe.net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -141,9 +150,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -199,6 +205,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,10 +218,23 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Images\BlueBlock.jpg" />
+    <Content Include="Images\BlueCirc.jpg" />
+    <Content Include="Images\DAMN Map.jpg" />
+    <Content Include="Images\DC.png" />
+    <Content Include="Images\DCsq.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\DCsqBW.png" />
+    <Content Include="Images\FB-f-Logo__blue_29.png" />
+    <Content Include="Images\GlobalGoalsWithWoman.jpg" />
+    <Content Include="Images\In-2C-28px-R.png" />
+    <Content Include="Images\Instagrarm-glyph-logo_May2016.png" />
+    <Content Include="Images\Mosaic.jpg" />
+    <Content Include="Images\RedBlock.jpg" />
+    <Content Include="Images\Twitter_Social_Icon_Rounded_Square_Color.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -222,6 +242,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\DarrylSite20170501025647.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Images.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -229,11 +250,15 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Media.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\RandomText.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -271,6 +296,15 @@
     <Content Include="Views\Home\Seller.cshtml" />
     <Content Include="Views\Home\Resources.cshtml" />
     <Content Include="Views\Home\Private.cshtml" />
+    <Content Include="Views\Home\ReturnFromPayPal.cshtml" />
+    <Content Include="Views\Tests\_TestsLayout.cshtml" />
+    <Content Include="Views\Tests\_ViewStart.cshtml" />
+    <Content Include="Views\Tests\Text.cshtml" />
+    <Content Include="Views\Tests\Media.cshtml" />
+    <Content Include="Views\Tests\Social.cshtml" />
+    <Content Include="Views\Tests\Images.cshtml" />
+    <Content Include="Views\Tests\Forms.cshtml" />
+    <Content Include="Views\Home\ReturnFromStripe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

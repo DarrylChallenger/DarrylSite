@@ -1,4 +1,6 @@
-﻿
+﻿using DarrylSite.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,24 @@ namespace DarrylSite.Controllers
 {
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
+            ViewBag.displayItems = "N";
+            ViewBag.isAdmin = "N";
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewBag.displayItems = "Y";
+            }
+
+            if (isAdminUser())
+            {
+                ViewBag.isAdmin = "Y";
+            }
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -21,6 +36,7 @@ namespace DarrylSite.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -28,6 +44,7 @@ namespace DarrylSite.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Seller()
         {
             ViewBag.Message = "Your seller page.";
@@ -37,23 +54,53 @@ namespace DarrylSite.Controllers
 
         public ActionResult Private()
         {
-            ViewBag.Message = "Private, secured page.";
+            ViewBag.Message = "Test pages.";
 
             return View();
         }
 
-        public ActionResult Blog()
-        {
-            ViewBag.Message = "My blog page.";
-
-            return View();
-        }
-
+        [AllowAnonymous]
         public ActionResult Resources()
         {
             ViewBag.Message = "Your Resource page.";
 
             return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult ReturnFromPayPal()
+        {
+            ViewBag.Message = "Return From PayPal page.";
+
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult ReturnFromStripe()
+        {
+            ViewBag.Message = "Return From Stripe page.";
+
+            return View();
+        }
+
+        private Boolean isAdminUser()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = User.Identity;
+                ApplicationDbContext context = new ApplicationDbContext();
+                var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                var s = UserManager.GetRoles(user.GetUserId());
+                if (s[0].ToString() == "Admin")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }

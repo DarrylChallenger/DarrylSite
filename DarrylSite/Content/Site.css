@@ -1,6 +1,15 @@
-﻿body {
+﻿/* Define colors*/
+/*
+:root {
+    --EquityGrey: #06c;
+}
+*/
+html {
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    height:100%;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +30,327 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+.brandtext {
+    font-family:'Times New Roman', Times, serif;
+    font-weight:700;
+}
+.bb {
+    border-style:solid;
+    border-color:red;
+}
+
+.randomtext, .randomtext2 {
+    color:red;
+    font-style:italic;
+    float:right;
+}
+.centertxtingrid1{
+
+}
+/* Text Page */
+.myRow1, .myRow2, .myBorder {
+    border-style:solid;
+    border-color:blue;
+}
+
+.myBorder2 {
+    border-style:solid;
+    border-color:green;
+}
+
+.myCol{
+    border-style:solid;
+    border-color:red;
+}
+
+/* make the padding the same in all columns to force them to line up */
+.myCol1, .myCol4 {
+    border-style:solid;
+    border-color:red;
+    padding:50px 0;
+}
+.myCol2, .myCol3 {
+    padding:70px 1em;
+    border-style:solid;
+}
+
+.myText {
+    border-style:solid;
+}
+.myText2 {
+    border-style:solid;
+    border-color:green;
+    text-align:center;
+}
+
+.myText3 {
+}
+
+.displayflex {
+    display:flex;
+    justify-content:center;
+}
+
+.centereddiv {
+    width: 75% ;
+    text-align:center;
+}
+
+.AnImageContainer{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.SomeText {
+    position:absolute;
+    bottom:10px;
+    right:50px;
+    color:white;
+}
+
+.EqColHeights {
+   border-style: solid;
+   border-color:red;
+ }
+.Text3 p {
+    border-style: solid;
+    border-color: purple;
+}
+
+.eqHeightCols {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+}
+
+.TextInBoxesRows1 {
+    margin-left:5em;
+    margin-right:5em;
+}
+
+.TextInBoxesRows2 {
+    margin-left:5em;
+    margin-right:5em;
+}
+
+.DetailedText {
+    font-size:1.5em;
+}
+
+/*Media*/
+.Media1 p {
+    border-style: solid;
+    border-color: blue;
+}
+
+@media only screen and (min-width:768px) {
+    .Media1 p {
+        border-style: solid;
+        border-color: green;
+    }
+}
+@media only screen and (min-width:992px) {
+    .Media1 p {
+        border-style: solid;
+        border-color: red;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    .Media1 p {
+        border-style: solid;
+        border-color: black;
+    }
+}
+
+.row > [class*='col-'] {
+    display:flex;
+    flex-direction:column;
+}
+
+
+img.rightimage {
+    width:330px;
+    height:341px;
+    float:initial;
+    border-style:solid;
+    border-color:orange;
+    border-width:10px;
+}
+
+img.leftimage {
+    width:330px;
+    height:341px;
+    float:initial;
+    border-style:solid;
+    border-color:blue;
+    border-width:10px;
+}
+@media only screen and (min-width:768px) {
+    img.leftimage {
+        float:left;
+        border-color:white;
+        border-width:10px;
+        border-top-width:0;
+        height: 100px;
+        width:100px;
+    }
+    img.rightimage {
+        float:right;
+        border-color:red;
+        border-width:10px;
+    }
+}
+
+
+
+/* Images*/
+.BlueEffect {
+    /*background-image:url("../Images/BlueBlock.jpg");*/
+}
+.BlueEffect2 {
+    /*background-image:url("../Images/BlueBlock.jpg");*/
+}
+.BlueFilter {   
+    opacity:.3;
+    /*background: rgba(0, 0, 0, 0.3);  */
+}
+.opacity0 { 
+    opacity:.0;
+}
+
+.opacity1 {
+    opacity:.1;
+}
+
+.opacity2 {
+    opacity:.2;
+}
+
+.opacity25 {
+    opacity:.25;
+}
+
+.opacity3 {
+    opacity:.3;
+}
+
+.opacity4 {
+    opacity:.4;
+}
+
+.BlueFilter2a {   
+    background-image:url("../Images/DCsq.png");
+    height:256px;
+    width:256px;
+    opacity:.3;
+    /*background: rgba(0, 0, 0, 0.3);  */
+}
+
+.BlueFilter2b {   
+    background-image:url("../Images/DCsqBW.png");
+    height:256px;
+    width:256px;
+    /*background: rgba(0, 0, 0, 0.3);  */
+}
+
+
+.OrigFilterA {   
+    background-image:url("../Images/DCsq.png");
+    height:256px;
+    width:256px;
+    opacity:.7;
+}
+
+.OrigFilterB {   
+    background-image:url("../Images/DCsqBW.png");
+    height:256px;
+    width:256px;
+    /*background: rgba(0, 0, 0, 0.3);  */
+}
+
+.OrigEffect
+{
+    text-align:center;
+    margin:0 auto;
+    position:relative;
+}
+
+.OrigLabelA {
+    color:red;
+    font-weight:700;
+    text-align:center;
+    border-style:dotted;
+    border-color:red;
+}
+
+.pad256 {
+    padding:0 0;
+    border-style:solid;
+    border-color:orange;
+
+}
+
+.OrigHide {
+    color:green;
+    font-weight:700;
+    text-align:center;
+    border-style:solid;
+    border-color:green;
+}
+
+.imagepage {
+ /*background-image: url("http://www.impawards.com/tv/posters/glee_ver9_xlg.jpg");*/
+     background-image:url("../Images/BlueCirc.jpg");
+     width:300px;
+     height:300px;
+    background-attachment: fixed;
+    /*/background-size: 100%;*/
+}
+.tint {
+    z-index: 1;
+ height: 100%;
+width: 100%;
+position: absolute;
+top: 0px;
+left: 0px;
+background: rgba(0, 0, 0, 0.7);    
+}
+.whitecontent {
+ color: white;
+}
+/* Forms */
+.boxed {
+    border-style:solid;
+    border-color:black;
+}
+
+
+
+
+@media only screen and (min-width: 1) and (orientation:landscape) 
+{
+    .TstBullet {
+	    display:inherit;
+    }
+    .TstSmBullet,  .noCABPic {
+	    display:inherit;
+    }
+	.PressC{
+	background-color:red;
+    }
+}
+
+
+.PressD {
+    min-height: 400px;
+    max-height: 400px;
+    overflow: auto;
+    position: relative;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }
