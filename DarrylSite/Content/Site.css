@@ -44,6 +44,27 @@ textarea {
     padding-left:5em;
 }
 
+@media only screen and (max-width:768px) {
+
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        margin-left: -50px !important; /* 50% of your logo width */
+        display: block;
+    }
+
+}
+.navbar-brand 
+{/*
+    background: url('../Images/DC LOGO Purple Paper Field.png');
+    background-repeat: no-repeat;
+    background-position: 15px 0;
+    height: auto;
+    */
+}
+.navImg {
+    height:50px;
+}
 .randomtext, .randomtext2 {
     color:red;
     font-style:italic;
