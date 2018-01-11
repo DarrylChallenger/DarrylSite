@@ -205,6 +205,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,9 +219,25 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Images\001-graphic.png" />
+    <Content Include="Images\001-graphicWhite.png" />
+    <Content Include="Images\002-anchor.png" />
+    <Content Include="Images\003-arrows.png" />
+    <Content Include="Images\004-man.png" />
+    <Content Include="Images\005-business-1.png" />
+    <Content Include="Images\006-business.png" />
     <Content Include="Images\BlueBlock.jpg" />
     <Content Include="Images\BlueCirc.jpg" />
+    <Content Include="Images\business-people-meeting.png" />
+    <Content Include="Images\CABBrand_414_320.png" />
+    <Content Include="Images\CAB_V6-WonB550_425.png" />
+    <Content Include="Images\CAB_V6-WonTx550_425.png" />
     <Content Include="Images\DAMN Map.jpg" />
+    <Content Include="Images\DC Logo Bevel.png" />
+    <Content Include="Images\DC LOGO Engrave.png" />
+    <Content Include="Images\DC LOGO Grey Paper Field.png" />
+    <Content Include="Images\DC LOGO Metal Field.png" />
+    <Content Include="Images\DC LOGO Purple Paper Field.png" />
     <Content Include="Images\DC.png" />
     <Content Include="Images\DCsq.png" />
     <Content Include="favicon.ico" />
@@ -228,18 +245,35 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\DCsqBW.png" />
+    <Content Include="Images\EquityQ300_170.png" />
+    <Content Include="Images\equityQFB_V3BlueOnTx.png" />
+    <Content Include="Images\equityQFB_V3WOnTx.png" />
+    <Content Include="Images\equity_V3-03.png" />
+    <Content Include="Images\equity_V3-03blue.png" />
     <Content Include="Images\FB-f-Logo__blue_29.png" />
     <Content Include="Images\GlobalGoalsWithWoman.jpg" />
+    <Content Include="Images\GoldBG1.png" />
     <Content Include="Images\In-2C-28px-R.png" />
     <Content Include="Images\Instagrarm-glyph-logo_May2016.png" />
+    <Content Include="Images\Kinect.png" />
+    <Content Include="Images\metal10.jpg" />
+    <Content Include="Images\metal2.jpg" />
+    <Content Include="Images\metal3.jpg" />
+    <Content Include="Images\metal4.jpg" />
+    <Content Include="Images\MetalBG1.png" />
     <Content Include="Images\Mosaic.jpg" />
+    <Content Include="Images\PaperBG1.png" />
     <Content Include="Images\RedBlock.jpg" />
+    <Content Include="Images\settings-gears.png" />
+    <Content Include="Images\Status.png" />
     <Content Include="Images\Twitter_Social_Icon_Rounded_Square_Color.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\Sans-Copperplate-Gothic.eot" />
+    <Content Include="fonts\sans-copperplategothic.ttf" />
     <None Include="Properties\PublishProfiles\DarrylSite20170501025647.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Images.js" />
@@ -256,6 +290,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Content\GreyPprMetal.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -305,6 +340,10 @@
     <Content Include="Views\Tests\Images.cshtml" />
     <Content Include="Views\Tests\Forms.cshtml" />
     <Content Include="Views\Home\ReturnFromStripe.cshtml" />
+    <Content Include="Views\Home\Samples.cshtml" />
+    <Content Include="Views\Site\_SiteLayout.cshtml" />
+    <Content Include="Views\Site\GreyPprMetal.cshtml" />
+    <Content Include="Views\Site\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

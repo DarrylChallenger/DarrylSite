@@ -29,7 +29,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    @Html.ActionLink("Challenger LLC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand brandtext" })
+                    <a class="navbar-brand" href="/"><img class="navImg" src="~/Images/DC LOGO Purple Paper Field.png" /></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -38,6 +38,7 @@
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li>@Html.ActionLink("Seller", "Seller", "Home")</li>
                         <li>@Html.ActionLink("Tests", "Private", "Home")</li>
+                        <li>@Html.ActionLink("Sites", "Index","Site")</li>
                         @if (@ViewBag.displayItems == "Y")
                         {
                             <li>@Html.ActionLink("Seller (Auth)", "Seller", "Home")</li>

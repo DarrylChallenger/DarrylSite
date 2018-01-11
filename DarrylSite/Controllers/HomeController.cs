@@ -67,6 +67,14 @@ namespace DarrylSite.Controllers
         }
 
         [AllowAnonymous]
+        public ActionResult Samples()
+        {
+            ViewBag.Message = "Your Resource page.";
+
+            return View();
+        }
+
+        [AllowAnonymous]
         public ActionResult ReturnFromPayPal()
         {
             ViewBag.Message = "Return From PayPal page.";

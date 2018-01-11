@@ -40,11 +40,43 @@ textarea {
     border-color:red;
 }
 
+.navbar {
+    padding-left:5em;
+}
+
+@media only screen and (max-width:768px) {
+
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        margin-left: -50px !important; /* 50% of your logo width */
+        display: block;
+    }
+
+}
+.navbar-brand 
+{/*
+    background: url('../Images/DC LOGO Purple Paper Field.png');
+    background-repeat: no-repeat;
+    background-position: 15px 0;
+    height: auto;
+    */
+}
+.navImg {
+    height:50px;
+}
 .randomtext, .randomtext2 {
     color:red;
     font-style:italic;
     float:right;
+    padding-right:5em;
 }
+
+.boxed {
+    border-style:solid;
+    border-color:black;
+}
+
 .centertxtingrid1{
 
 }
@@ -165,46 +197,12 @@ textarea {
         border-color: black;
     }
 }
-
+/*
 .row > [class*='col-'] {
     display:flex;
     flex-direction:column;
 }
-.boxed {
-    border-style:solid;
-    border-width:2px;
-}
-
-.containerstyle {
-    display:inline-block;
-}
-
-.red {
-    color:red;
-}
-
-.outcol {
-    width: 100%;
-    display: inline-block;
-    font-weight: 700;
-    font-size: 2em;
-}
-
-.onecol {
-    width: 65%;
-    display: inline-block;
-    font-weight: 700;
-    margin-left:0;
-    margin-right:0;
-    /font-size: 2em;
-}
-
-.twocol {
-    width: 33%;
-    display: inline-block;
-    vertical-align:top;
-    /float:right;
-}
+    */
 
 img.rightimage {
     width:330px;
@@ -242,6 +240,106 @@ img.leftimage {
 
 
 /* Images*/
+.Logos {
+    display:none;
+    background-image:url("../Images/PaperBG2.png");
+    color:yellow;
+}
+
+.ImageInDiv {
+    background-color:darkred;
+    border-width:8em 2em 2em 2em ;
+    border-style:solid;
+    border-color:red;
+    width:100%;
+    height:1000px;
+    display:none;
+}
+
+.ImageInDivWrapper {
+    background-color:darkblue;
+    border-style:solid;
+    /border-width:4em 3em 9em 3em ;
+    border-color:blue;
+    height:500px;
+    position:relative;
+}
+
+.ImageInDivImg {
+    max-width:100%;
+    max-height:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto;
+}
+
+.sameheightcols {
+}
+
+.SHCRow {
+    background-color:lightsalmon;
+}
+
+.sameheightcols .col-md-4 {
+    padding-left:0;
+    padding-right:0;
+    background-color:orange;
+}
+
+.SHCBox {
+    max-width:100%;
+    margin:auto;
+    /border-style:solid;
+    border-color:red;
+    border-width:2px;
+    vertical-align:middle;
+    height:320px;
+    white-space:nowrap;
+
+}
+.SHCLink:hover {
+    opacity:.2;
+    border-color:orange;
+    /background-color:yellow;
+}
+/*
+.SHCHeightBox {
+        height:320px;
+        white-space:nowrap;
+        padding-top:initial;
+        border-style:solid;
+        border-color:green;
+}
+*/
+.SHCLink {
+    height:100%;
+    width:100%;
+    display:block;
+    border-style:solid;
+    border-color:white;
+    border-width:4px;
+    text-align:center;
+}
+
+.SHCImageContainer {
+    height:100%;
+    position:relative;
+}
+
+.SHCImage {
+    padding:1em;
+    max-height:100%;
+    max-width:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto;
+}
+
+
 .BlueEffect {
     /*background-image:url("../Images/BlueBlock.jpg");*/
 }
@@ -349,18 +447,14 @@ img.leftimage {
  height: 100%;
 width: 100%;
 position: absolute;
-top: 0px;
-left: 0px;
+top: 0;
+left: 0;
 background: rgba(0, 0, 0, 0.7);    
 }
 .whitecontent {
  color: white;
 }
 /* Forms */
-.boxed {
-    border-style:solid;
-    border-color:black;
-}
 
 
 
@@ -388,3 +482,4 @@ background: rgba(0, 0, 0, 0.7);
     border-color: black;
     border-width: 1px;
 }
+

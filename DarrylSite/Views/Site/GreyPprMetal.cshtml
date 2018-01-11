@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "GreyPprMetal";
+    Layout = "~/Views/Site/_SiteLayout.cshtml";
+}
+<div class="GreyPprMetal">
+    <div class="mainTitle">
+        <div class="mainTitleTop">
+            <img class="CenteredImage" src="~/Images/DC LOGO Metal Field.png" />
+            <h1 class="appTitle">
+                Challenger Technology
+            </h1>
+            <!--  <hr class="titlebr" /> -->
+            <svg class="inherhitWidth" width=100% height=10>
+                <line x1="0%" y1="5" x2=100% y2="5" style="stroke:black;stroke-width:2"></line>
+            </svg>
+            <div class="mainTitleBot h1">
+                Solutions
+            </div>
+        </div>
+    </div>
+    <p class="subTitle"><em>Taking the challenge out of technology</em></p>
+    <p></p>
+    @Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "mainContactBtn" })
+
+</div>
+<div class="Services spacing">
+    <h2>Services</h2>
+    <div class="">
+        <ul class="bullet">
+            <li><div class="Service"><img class="ServiceImg" src="~/Images/001-graphic.png" /><span> @Html.ActionLink("Online Profile creation for your Business or Charity", "OnlineProfile", null, new { @class = "ServiceLink" })</span></div></li>
+            <li><div class="Service"><img class="ServiceImg" src="~/Images/settings-gears.png" /><span> @Html.ActionLink("Application Development and Systems Integration", "AppDev")</span></div></li>
+            <li><div class="Service"><img class="ServiceImg" src="~/Images/business-people-meeting.png" /><span> @Html.ActionLink("Software Development and Development Team Leadership", "Leadership")</span></div></li>
+            <li><div class="Service"><img class="ServiceImg" src="~/Images/003-arrows.png" /><span> @Html.ActionLink("Consulting", "Consulting")</span></div></li>
+            <!--<li><div class="Service"><img class="ServiceImg" src="" /><span> @Html.ActionLink("Data Conversions and Migrations", "Conversions")</span></div></li>-->
+            <li><div class="Service"><img class="ServiceImg" src="~/Images/Kinect.png" /><span> @Html.ActionLink("Kinect Gesture Detection", "Kinect")</span></div></li>
+        </ul>
+    </div>
+
+</div>
+@*
+    <p>Screen Size:<span id="WWW"></span><span id="HHH"></span></p>
+*@
+<div class="Gallery spacing ">
+    <h2>Gallery</h2>
+    <div class="row GalleryRow">
+        <div class="col-sm-4 col-xs-12 GalleryBox">
+                <a class="GalleryLink" href="@Url.Action("CAB", "Home", new { title="Chess Across Borders Web Site" })">
+                    <img alt="Chess Across Borders Web Site" title="Chess Across Borders Web Site" class="GalleryImage" 
+                         src="@Url.Content("~/Images/CAB_V6-WonTx550_425.png")" />
+                </a>
+                </div>
+        <div class="col-sm-4 col-xs-12 GalleryBox">
+            <a class="GalleryLink" href="@Url.Action("Equity", "Home", new { title="Equity Project For All Facebook Page" })">
+                <img alt="Equity Facebook Page" title="Equity on Facebook" class="GalleryImage" 
+                     src="@Url.Content("~/Images/equityQFB_V3WOnTx.png")" />
+            </a>
+        </div>
+        <div class="col-sm-4 col-xs-12 GalleryBox">
+            <div class="GalleryHeightBox"></div>
+            <a class="GalleryLink" href="@Url.Action("Equity", "Home", new { title="Equity Project For All Web Site" })">
+                <img alt="Equity Web Site" title="Equity Web Site" class="GalleryImage" 
+                     src="@Url.Content("~/Images/equity_V3-03.png")" />
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ContactDCTech spacing">
+    <h2>Our Commitment</h2>
+    <p>
+        Our focus is you and your clients. We'll work with you to get you exactly what you need.
+        If you are new to this, don't worry - you have a partner with us.<br />
+    </p>
+
+    @Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { @class = "ContactBtn" })
+</div>
+@*<div class="Testimonials"></div>*@
+<div class="usefulResources spacing">
+    <hr />
+    @Html.ActionLink("Developer Resources", "DevResources", "Home", routeValues: null, htmlAttributes: new { @class = "h2" })<span class="usefulResourcesText"> - Tools and Resources I've found helpful in the devleopment process.</span>
+</div>
+@*
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+*@

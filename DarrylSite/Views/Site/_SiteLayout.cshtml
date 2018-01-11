@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Courgette|Montserrat:700|Pattaya|Paytone+One|Poppins:700|Russo+One|Noto+Sans:700|900" rel="stylesheet">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script type='text/javascript'>
+        var appInsights=window.appInsights||function(config)
+        {
+            function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
+            var t = { config:config},u=document,e=window,o='script',s=u.createElement(o),i,f;for(s.src=config.url||'//az416426.vo.msecnd.net/scripts/a/ai.0.js',u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=['Event','Exception','Metric','PageView','Trace','Ajax'];i.length;)r('track'+i.pop());return r('setAuthenticatedUserContext'),r('clearAuthenticatedUserContext'),config.disableExceptionTracking||(i='onerror',r('_'+i),f=e[i],e[i]=function(config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o),s}),t
+        }({
+            instrumentationKey:'edbaf981-43dd-413d-a762-14f414e2d9e1'
+        });
+
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+    @if (ViewBag.myStylesheet == "GreyPprMetal.css")
+    {
+        <link rel="stylesheet" type="text/css" href="~/Content/GreyPprMetal.css" />
+    }
+</head>
+<!--
+<body onresize="myFunction()">
+-->
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Challenger LLC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand brandtext" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("GreyPprMetal", "GreyPprMetal", "Site")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content" style="height:100%">
+        <p class="randomtext" id="rndText"></p>
+        @RenderBody()
+        <hr />
+        <footer class="footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <address>
+                        <a class="leftFoot" href="@Url.Action("Index", "Home")"><span class="copy">&copy;</span> Darryl Challenger Technology Solutions, Inc.</a>
+                    </address>
+                </div>
+                @*<h2>Contact@dctechnologysolutions.com</p>*@
+                <div class="col-xs-12 col-sm-6">
+                    <address>
+                        @*<a class="rightFoot" href="@Url.Action("Contact", "Home")">contact@dctechnologysolutions.com</a>*@
+                        <a class="rightFoot" href="mailto:contact@dctechnologysolutions.com">contact@dctechnologysolutions.com</a>
+                    </address>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body></html>
