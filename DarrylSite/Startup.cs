@@ -17,6 +17,14 @@ namespace DarrylSite
         // In this method we will create default User roles and Admin user for login   
         private void createRolesandUsers()
         {
+            /*
+             * 
+             * https://www.linkedin.com/learning/asp-dot-net-mvc-5-essential-training/asp-dot-net-identity-and-the-user-manager
+             * https://www.linkedin.com/learning/asp-dot-net-mvc-5-essential-training/authenticating-users-with-facebook
+             * https://www.linkedin.com/learning/asp-dot-net-mvc-5-essential-training/using-role-based-authorization
+             * https://www.linkedin.com/learning/asp-dot-net-mvc-5-essential-training/seeding-roles-and-assignments
+             * 
+             */
             Models.ApplicationDbContext context = new Models.ApplicationDbContext(); //https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97
 
             string s = context.Database.Connection.DataSource.ToString();
@@ -25,7 +33,7 @@ namespace DarrylSite
 
             
             // In Startup iam creating first Admin Role and creating a default Admin User    
-            if (!roleManager.RoleExists("Admin"))
+            if (!roleManager.RoleExists("Admin")) //
             {
 
                 // first we create Admin rool   
