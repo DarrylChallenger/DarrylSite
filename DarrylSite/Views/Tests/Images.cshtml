@@ -11,6 +11,34 @@
     <img src="~/Images/DC LOGO Metal Field.png" />
 
 </div>
+
+<h3>Display text and image side by side, first column rows</h3>
+<div class="outcol boxed red">
+    <div class="row onecol containerstyle boxed">
+        <div class="row"><p class="col-sm-6">Line 1</p></div>
+        <div class="row"><p class="col-sm-6">Line 2</p></div>
+        <div class="row"><p class="col-sm-6">Line 3</p></div>
+        <div class="row"><p class="col-sm-6">Line 4</p></div>
+        <div class="row"><p class="col-sm-6">Line 5</p></div>
+        <div class="row"><p class="col-sm-6">Line 6</p></div>
+        <div class="row"><p class="col-sm-6">Line 7</p></div>
+        <div class="row"><p class="col-sm-6">Line 8</p></div>
+        <div class="row"><p class="col-sm-6">Line 9</p></div>
+    </div>
+    <img class="twocol boxed" src="~/Images/DC.png" />
+</div>
+
+<h3>Display text and image side by side</h3>
+<div class="outcol boxed red">
+    <div class="onecol containerstyle boxed">
+        <p class="">First line</p>
+        <p class="">Second line</p>
+        <p class="">Third line</p>
+        <p class="">Forth Line</p>
+    </div>
+    <img class="twocol boxed" src="~/Images/DC.png" />
+</div>
+
 <div class="ImageInDiv">
     <h2>Image In Div</h2>
     <div class="ImageInDivWrapper">
@@ -22,7 +50,7 @@
         <div>
             <div class="col-md-4 SHCBox">
                 @*<div class="SHCHeightBox"></div>*@
-                <a class="SHCLink" href="#"> 
+                <a class="SHCLink" href="#">
                     <img class="SHCImage" src="~/Images/equity_V3-03blue.png" />
                 </a>
             </div>
@@ -42,16 +70,16 @@
     </div>
 </div>
 <h3>Display a plain image</h3>
-<img src="~/Images/DCsqBW.png"/>
+<img src="~/Images/DCsqBW.png" />
 
 <h3>Display a plain image with height and width</h3>
 <img src="~/Images/DCsqBW.png" width="265" height="265" />
 
 <h3>Display a responsive image</h3>
-<img src="~/Images/DCsqBW.png" class="img-responsive"/>
+<img src="~/Images/DCsqBW.png" class="img-responsive" />
 
 <h3>Display a responsive image with height and width</h3>
-<img src="~/Images/DCsqBW.png" width="265" height="265" class="img-responsive"/>
+<img src="~/Images/DCsqBW.png" width="265" height="265" class="img-responsive" />
 
 <h3>Display multiple images</h3>
 <img src="~/Images/DCsqBW.png" />
@@ -69,7 +97,7 @@
 </div>
 
 <div style="position:relative">
-    <img src="~/Images/BlueBlock.jpg" width="265" height="265" style="opacity:.3"/>
+    <img src="~/Images/BlueBlock.jpg" width="265" height="265" style="opacity:.3" />
 </div>
 
 <h3> Overlaying Image 2</h3>
@@ -77,7 +105,7 @@
     <img src="~/Images/DCsqBW.png" width="265" height="265" />
 </div>
 
-    <img src="~/Images/RedBlock.jpg" width="265" height="265" style="opacity:.3" />
+<img src="~/Images/RedBlock.jpg" width="265" height="265" style="opacity:.3" />
 <div style="position:relative"></div>
 
 <h3> Overlaying Image 3 - Change the opacity on the second image (colored block) on mouseove to hide/show the color filter</h3>
@@ -91,14 +119,14 @@
 <div style="position:absolute">
     <img src="~/Images/DCsqBW.png" width="265" height="265" class="img-circle headshot" />
 </div>
-<img src="~/Images/BlueBlock.jpg" width="265" height="265" class="img-circle headshot opacity0"  />
+<img src="~/Images/BlueBlock.jpg" width="265" height="265" class="img-circle headshot opacity0" />
 <div style="position:relative"></div>
 
 
-<h3>Overlaying Image 4 - Same can be done in style section</h3> 
+<h3>Overlaying Image 4 - Same can be done in style section</h3>
 
 <div style="position:absolute">
-    <img  class="img-circle" style="background-image:url(../../Images/DCsqBW.png);height:265px;width:265px"/>
+    <img class="img-circle" style="background-image:url(../../Images/DCsqBW.png);height:265px;width:265px" />
 </div>
 <img class="img-circle" style="opacity:.25;background-image:url(../../Images/BlueBlock.jpg);height:265px;width:265px;" />
 <div style="position:relative"></div>
@@ -235,39 +263,39 @@
 
 
 <h3>in grid</h3>
-<div class=""  style="height:100%">
+<div class="" style="height:100%">
     @*<div class="row ">
-        <div class="col-md-4 imagepage">
-            <img class="noEffect" src="~/Images/DCsqBW.png" style="height:265px; width:265px;" /> No effect
-        </div>
-        <div class="col-md-4 imagepage" >
-            <img class="BlueEffect" src="~/Images/DCsqBW.png" style="height:265px; width:265px;"/>Blue
-           
-        </div>
-        <div class="col-md-4 imagepage">
-            <img class="OrigEffect" src="~/Images/DCsqBW.png" style="height:265px; width:265px;" /> Original
-        </div>
-    </div>*@
-    <div class="row" >
+            <div class="col-md-4 imagepage">
+                <img class="noEffect" src="~/Images/DCsqBW.png" style="height:265px; width:265px;" /> No effect
+            </div>
+            <div class="col-md-4 imagepage" >
+                <img class="BlueEffect" src="~/Images/DCsqBW.png" style="height:265px; width:265px;"/>Blue
+
+            </div>
+            <div class="col-md-4 imagepage">
+                <img class="OrigEffect" src="~/Images/DCsqBW.png" style="height:265px; width:265px;" /> Original
+            </div>
+        </div>*@
+    <div class="row">
         <div class="col-md-4 pad256">
-            <img class="noEffect img-responsive img-circle" src="~/Images/DCsqBW.png" style="height:265px; width:265px;"/><span>"No effect"</span>
+            <img class="noEffect img-responsive img-circle" src="~/Images/DCsqBW.png" style="height:265px; width:265px;" /><span>"No effect"</span>
         </div>
         <div class="col-md-4 pad256">
             <img class="BlueEffect2 img-responsive img-circle BlueFilter2b" /><span class="">Blue</span>
         </div>
         <div class="col-md-4 pad256">
             <div class="OrigLabel OrigHide" style="height:100%">Original</div>
-            <img class="OrigEffect img-responsive img-circle OrigFilterB" style="height:265px; width:265px;"/>
+            <img class="OrigEffect img-responsive img-circle OrigFilterB" style="height:265px; width:265px;" />
         </div>
     </div>
     <div class="container" style="border-style:solid; border-color:yellow;height:100%;position:relative">
-        <h2 style="border-style:solid; border-color:green;" >Image</h2>
+        <h2 style="border-style:solid; border-color:green;">Image</h2>
         <p style="border-style:solid; border-color:green;">The .img-responsive class makes the image scale nicely to the parent element (resize the browser window to see the effect):</p>
-        <img src="~/Images/DCsq.png" class="img-responsive" alt="Me" style="position:absolute;border-style:solid; border-color:orange; border-width:thick; height:75%"/>
+        <img src="~/Images/DCsq.png" class="img-responsive" alt="Me" style="position:absolute;border-style:solid; border-color:orange; border-width:thick; height:75%" />
     </div>
 </div>
 <h3>Image as link</h3>
-<a href=""><img src="~/Images/DCsq.png"/></a>
+<a href=""><img src="~/Images/DCsq.png" /></a>
 
 <section>
     Link to video
