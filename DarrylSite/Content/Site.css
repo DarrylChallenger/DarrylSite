@@ -247,10 +247,44 @@ img.leftimage {
 }
 
 /* Image next to rows */
+.SwapOnMediaSize
+{
+}
+
+.SOMSLeft, .SOMSRight 
+{
+    border-style:solid;
+}
+
+.SOMSLeft {
+    width: 50%;
+    position:relative;
+}
+
+.SOMSRight {
+    width: 50%;
+    float:right;
+}
+
+.SOMSCleanup {
+    position:initial;
+}
+
+@media all and (max-width:767px) {
+    .SOMSRight {
+        width: 100%;
+        float: right;
+    }
+    .SOMSLeft {
+        width: 100%;
+        position: relative;
+    }
+
+}
 
 .containerstyle {
-    display: inline-block;
-}
+        display: inline-block;
+    }
 
 .red {
     color: red;
