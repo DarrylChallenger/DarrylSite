@@ -246,7 +246,6 @@ img.leftimage {
     color:yellow;
 }
 
-/* Image next to rows */
 .SwapOnMediaSize
 {
 }
@@ -281,6 +280,9 @@ img.leftimage {
     }
 
 }
+
+
+/* Image next to rows */
 
 .containerstyle {
         display: inline-block;
