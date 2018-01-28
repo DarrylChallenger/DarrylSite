@@ -7,13 +7,14 @@
     {
         <span>Select File:</span>
         <input type="file" name="postedFile" />
-        <hr />
+        <br />
         <input type="submit" value="Upload" />
         <br />
 
 
         <span style="color:green">@ViewBag.Message</span>
     }
+    <hr />
     <p>@Html.ActionLink("Download Logo", "IO_Download")</p>
     <p>@Html.ActionLink("Create an Excel File", "CreateExcelFile")</p>
 </div>
