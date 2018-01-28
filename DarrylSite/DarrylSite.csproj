@@ -352,6 +352,7 @@
     <Content Include="Views\Site\GreyPprMetal.cshtml" />
     <Content Include="Views\Site\Index.cshtml" />
     <Content Include="Views\Tests\IO.cshtml" />
+    <Content Include="Views\Tests\CreateExcelFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

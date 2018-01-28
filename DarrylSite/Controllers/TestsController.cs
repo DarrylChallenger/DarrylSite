@@ -69,13 +69,52 @@ namespace DarrylSite.Controllers
             return File("~/Images/DC Logo Bevel.png", "image/png", "DCLogo.png"); // https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types 
         }
 
-        ActionResult CreateExcelFile() 
+        public ActionResult CreateExcelFile() 
         {
             /*
              * https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/interop/how-to-access-office-onterop-objects
              * https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/interop/walkthrough-office-programming
              */
             var xl = new Excel.Application();
+            Workbook bk = xl.Workbooks.Add();
+            Worksheet worksheet = xl.ActiveSheet;
+            xl.Visible = true;
+            worksheet.Cells[1, "A"] = "Header 1";
+            worksheet.Cells[1, 2] = "Header # 2";
+            worksheet.Cells[1, 3] = "Header Wide 3";
+            worksheet.Cells[1, 4] = "Header $ 4";
+            worksheet.Cells[1, 5] = "Date Header 5";
+
+            // Add content?
+            worksheet.Cells[2,1] = "Row 1";
+            worksheet.Cells[2, 2] = 111;
+            worksheet.Cells[2, 3] = "Lots of text that goes on and on and on.";
+            worksheet.Cells[2, 4] = 178.99;
+            worksheet.Cells[2, 5] = "1/2/2018";
+
+            worksheet.Cells[3, 1] = "Row 2";
+            worksheet.Cells[3, 2] = 222;
+            worksheet.Cells[3, 3] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+            worksheet.Cells[3, 4] = "$178.00";
+            worksheet.Cells[3, 5] = 55555;
+
+            // Make Headers Bold 
+            Range range = worksheet.Rows[1];
+            range.EntireRow.Font.Bold = true;
+            // Make col 3 wide
+            range = worksheet.Columns[3];
+            range.AutoFit();
+            // Make col 4 currency
+            range = worksheet.Columns[4];
+            range.EntireColumn.NumberFormat = "$ #,###,###.00";
+            // Fomat col 5 as Dates 
+            range = worksheet.Columns[5];
+            range.NumberFormat = "mm/dd/yyyy";
+
+            //Save file
+            bk.SaveCopyAs("MyTestXLFile2");
+            bk.Close();
+            xl.Quit();
             return View();
         }
 
