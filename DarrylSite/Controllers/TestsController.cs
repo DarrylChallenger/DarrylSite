@@ -78,6 +78,7 @@ namespace DarrylSite.Controllers
             var xl = new Excel.Application();
             Workbook bk = xl.Workbooks.Add();
             Worksheet worksheet = xl.ActiveSheet;
+            worksheet.Name = "OJ_DarrylsSheet";
             xl.Visible = true;
             worksheet.Cells[1, "A"] = "Header 1";
             worksheet.Cells[1, 2] = "Header # 2";
@@ -112,7 +113,10 @@ namespace DarrylSite.Controllers
             range.NumberFormat = "mm/dd/yyyy";
 
             //Save file
-            bk.SaveCopyAs("MyTestXLFile2");
+            // http://csharp.net-informations.com/excel/csharp-create-excel.htm
+            object misValue = System.Reflection.Missing.Value;
+            bk.SaveAs("MyTestXLFile2", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive);
+
             bk.Close();
             xl.Quit();
             return View();
