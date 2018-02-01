@@ -6,6 +6,10 @@ using System.Web.Mvc;
 using Microsoft.Office.Interop;
 using Microsoft.Office.Interop.Excel;
 using Excel = Microsoft.Office.Interop.Excel;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using System.IO;
 
 namespace DarrylSite.Controllers
 {
@@ -69,6 +73,56 @@ namespace DarrylSite.Controllers
             return File("~/Images/DC Logo Bevel.png", "image/png", "DCLogo.png"); // https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types 
         }
 
+        public FileResult OpenXML_Download()
+        {
+            // save the doc on local storage (blob)
+            string fileName = "D:/Documents/tmp/tst.xlsx";
+            using (SpreadsheetDocument document = SpreadsheetDocument.Create(fileName, SpreadsheetDocumentType.Workbook))
+            {
+                WorkbookPart workbookPart = document.AddWorkbookPart();
+                workbookPart.Workbook = new DocumentFormat.OpenXml.Spreadsheet.Workbook();
+
+                WorksheetPart worksheetPart = workbookPart.AddNewPart<WorksheetPart>();
+                worksheetPart.Worksheet = new DocumentFormat.OpenXml.Spreadsheet.Worksheet(new SheetData());
+
+                DocumentFormat.OpenXml.Spreadsheet.Sheets sheets = workbookPart.Workbook.AppendChild(new DocumentFormat.OpenXml.Spreadsheet.Sheets());
+
+                Sheet sheet = new Sheet() { Id = workbookPart.GetIdOfPart(worksheetPart), SheetId = 1, Name = "Test Sheet" };
+
+                sheets.Append(sheet);
+
+                workbookPart.Workbook.Save();
+            }
+            return File(fileName, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        }
+
+        public FileResult OpenXML_DownloadNoSave()
+        {
+            byte[] b;
+            // save the doc on local storage (blob)
+            using (MemoryStream memStream = new MemoryStream())
+            {
+                using (SpreadsheetDocument document = SpreadsheetDocument.Create(memStream, SpreadsheetDocumentType.Workbook))
+                {
+                    WorkbookPart workbookPart = document.AddWorkbookPart();
+                    workbookPart.Workbook = new DocumentFormat.OpenXml.Spreadsheet.Workbook();
+
+                    WorksheetPart worksheetPart = workbookPart.AddNewPart<WorksheetPart>();
+                    worksheetPart.Worksheet = new DocumentFormat.OpenXml.Spreadsheet.Worksheet(new SheetData());
+
+                    DocumentFormat.OpenXml.Spreadsheet.Sheets sheets = workbookPart.Workbook.AppendChild(new DocumentFormat.OpenXml.Spreadsheet.Sheets());
+
+                    Sheet sheet = new Sheet() { Id = workbookPart.GetIdOfPart(worksheetPart), SheetId = 1, Name = "DownloadNoSave" };
+
+                    sheets.Append(sheet);
+
+                    workbookPart.Workbook.Save();
+                }
+                b = memStream.ToArray();
+                return File(b, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+            }
+        }
+
         public ActionResult CreateExcelFile() 
         {
             /*
@@ -76,8 +130,8 @@ namespace DarrylSite.Controllers
              * https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/interop/walkthrough-office-programming
              */
             var xl = new Excel.Application();
-            Workbook bk = xl.Workbooks.Add();
-            Worksheet worksheet = xl.ActiveSheet;
+            Excel.Workbook bk = xl.Workbooks.Add();
+            Excel.Worksheet worksheet = xl.ActiveSheet;
             worksheet.Name = "OJ_DarrylsSheet";
             xl.Visible = true;
             worksheet.Cells[1, "A"] = "Header 1";
