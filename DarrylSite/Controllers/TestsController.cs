@@ -10,6 +10,7 @@ using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.IO;
+using DarrylSite.Models;
 
 namespace DarrylSite.Controllers
 {
@@ -40,6 +41,13 @@ namespace DarrylSite.Controllers
         {
             return View();
         }
+/*        [HttpPost]
+        public ActionResult Forms()
+        {
+            return View();
+        }
+*/
+
         public ActionResult IO()
         {
             //WebClient wc = new WebClient();
@@ -228,6 +236,28 @@ namespace DarrylSite.Controllers
             int numCols = r.Columns.Count;
             int numRows = r.Rows.Count;
             return true;
+        }
+
+        [HttpGet]
+        public ActionResult Array()
+        {
+            ArrayListModel array = new ArrayListModel();
+            array.Array = new List<ArrayModel>();
+            ArrayModel am;
+            for (int i = 1; i < 5; i++)
+            {
+                am = new ArrayModel() { intCol = i, stringCol = "Hello" + i, intCol2=i*2};
+                array.Array.Add(am);
+            }
+            return View(array);
+        }
+
+        [HttpPost]
+        public ActionResult Array(ArrayListModel array)
+        {
+            int c = array.Array.Count();
+            return View(array);
+
         }
     }
 }
