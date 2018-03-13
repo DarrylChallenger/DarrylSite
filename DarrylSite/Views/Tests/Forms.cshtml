@@ -1,4 +1,5 @@
-﻿
+﻿@model DarrylSite.Models.FormsModel
+
 @{
     ViewBag.Title = "Forms";
     Layout = "~/Views/Tests/_TestsLayout.cshtml";
@@ -95,6 +96,18 @@
         </div>
     </form>
 </div>
+
+<div>
+    <form action="" method="post">
+        @Html.DropDownListFor(model => model.Index, new SelectList(Model.Teams, "Value", "Text"), "Select a team")
+        <input type="submit" value="Is a value selected?" />
+        <p>@Model.Index</p>
+        <div>
+            @Html.ValidationMessageFor(model => model.Index, "You must pick a team!", new { @class = "text-danger" })
+        </div>
+    </form>
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/Scripts/AddContent.js")

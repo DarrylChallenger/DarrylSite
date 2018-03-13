@@ -37,16 +37,31 @@ namespace DarrylSite.Controllers
         {
             return View();
         }
+        private void SetFormModel(FormsModel fm)
+        {
+            fm.Teams = new List<SelectListItem>();
+            fm.Teams.Add(new SelectListItem() { Text = "Yankees", Value = "1" });
+            fm.Teams.Add(new SelectListItem() { Text = "Mets", Value = "2" });
+            fm.Teams.Add(new SelectListItem() { Text = "Giants", Value = "3" });
+            fm.Teams.Add(new SelectListItem() { Text = "Jets", Value = "4" });
+            fm.Teams.Add(new SelectListItem() { Text = "Bills", Value = "5" });
+            fm.Teams.Add(new SelectListItem() { Text = "Knicks", Value = "6" });
+            fm.Teams.Add(new SelectListItem() { Text = "Nets", Value = "7" });
+            fm.Index = 0;
+        }
         public ActionResult Forms()
         {
-            return View();
+            FormsModel fm = new FormsModel();
+            SetFormModel(fm);
+            return View(fm);
         }
-/*        [HttpPost]
-        public ActionResult Forms()
+
+        [HttpPost]
+        public ActionResult Forms(FormsModel fm)
         {
-            return View();
+            SetFormModel(fm);
+            return View(fm);
         }
-*/
 
         public ActionResult IO()
         {
