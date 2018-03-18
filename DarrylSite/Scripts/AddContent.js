@@ -1,4 +1,13 @@
-﻿function addContentBefore() {
+﻿$(function () { 
+    $("<h3>prependTo</h3>").prependTo("#centerpoint2");
+    $("<h2>insertBefore</h2>").insertBefore("#centerpoint2");
+    $("<h3>appendTo</h3>").appendTo("#centerpoint2"); 
+    $("<h2>insertAfter</h2>").insertAfter("#centerpoint2");
+    $("#centerpoint2").attr("test", "result");
+});
+
+
+function addContentBefore() {
 
 }
 

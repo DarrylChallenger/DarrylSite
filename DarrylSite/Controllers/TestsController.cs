@@ -47,7 +47,7 @@ namespace DarrylSite.Controllers
             fm.Teams.Add(new SelectListItem() { Text = "Bills", Value = "5" });
             fm.Teams.Add(new SelectListItem() { Text = "Knicks", Value = "6" });
             fm.Teams.Add(new SelectListItem() { Text = "Nets", Value = "7" });
-            fm.Index = 0;
+            fm.Index = "";
         }
         public ActionResult Forms()
         {
@@ -59,7 +59,9 @@ namespace DarrylSite.Controllers
         [HttpPost]
         public ActionResult Forms(FormsModel fm)
         {
+            string index = fm.Index;
             SetFormModel(fm);
+            fm.Index = index;
             return View(fm);
         }
 

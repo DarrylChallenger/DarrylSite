@@ -6,6 +6,14 @@
 }
 
 <h2>Forms</h2>
+
+<h3>DOM Manipulation (see AddContent.js)</h3>
+<div>
+    <div>b4c2</div>
+    <div id="centerpoint2">Centerpoint2</div>
+    <div>afterc2</div>
+</div>
+
 <h3>Forms with buttons</h3>
 <div class="form-horizontal">
     <div id="mycontainer">
@@ -99,17 +107,21 @@
 
 <div>
     <form action="" method="post">
+        @Html.LabelFor(model => model.Index)
         @Html.DropDownListFor(model => model.Index, new SelectList(Model.Teams, "Value", "Text"), "Select a team")
         <input type="submit" value="Is a value selected?" />
         <p>@Model.Index</p>
         <div>
-            @Html.ValidationMessageFor(model => model.Index, "You must pick a team!", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.Index, null, new { @class = "text-danger" })
         </div>
     </form>
 </div>
+<hr />
 
 
 @section Scripts {
     @Scripts.Render("~/Scripts/AddContent.js")
+    @Scripts.Render("~/bundles/jqueryval")
+
 }
 
