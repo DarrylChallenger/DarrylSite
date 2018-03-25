@@ -42,6 +42,7 @@
                         @if (@ViewBag.displayItems == "Y")
                         {
                             <li>@Html.ActionLink("Seller (Auth)", "Seller", "Home")</li>
+                            <li>@Html.ActionLink("Manage Users", "ManageUsers", "Account")</li>
                         }
                         @if (@ViewBag.isAdmin == "Y")
                         { }
@@ -56,9 +57,8 @@
             <br />
             <p class="randomtext2"></p>
             @RenderBody()
-            <hr />
             <footer>
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                <p>&copy; @DateTime.Now.Year - DarrylSite</p>
             </footer>
         </div>
 

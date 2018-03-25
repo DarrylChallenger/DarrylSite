@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using DarrylSite.Models;
+using System.Collections.Generic;
 
 namespace DarrylSite.Controllers
 {
@@ -179,6 +180,74 @@ namespace DarrylSite.Controllers
             return View(model);
         }
 
+        public ActionResult ManageUsers()
+        {
+            ManageUserModel model = new ManageUserModel();
+            model.users = new List<ManageUserUserModel>();
+            List<ApplicationUser> aul = context.Users.ToList();
+            foreach  (ApplicationUser au in aul)
+            {
+                ManageUserUserModel muum = new ManageUserUserModel()
+                {
+                    Id = au.Id,
+                    UserName = au.UserName,
+                    Email = au.Email,
+                    Phone = au.PhoneNumber,
+                    UserRoles = null
+                };
+                model.users.Add(muum);
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult ManageUsers(ManageUserModel model)
+        {
+            SaveUsers(model.users);
+            return View(model);
+        }
+
+        void SaveUsers(List<ManageUserUserModel> users)
+        {
+            foreach(ManageUserUserModel muum in users)
+            {
+                ApplicationUser u = new ApplicationUser();
+                u.UserName = muum.UserName;
+                u.Email = muum.Email;
+                string uPWD = muum.Password;
+                string roles = muum.UserRoles;
+
+                switch (muum.State)
+                {
+                    case RMStateEnum.Added:
+                        IdentityResult irc, irr;
+                        irc = UserManager.Create(u, uPWD);
+                        if (irc.Succeeded)
+                        {
+                            irr = UserManager.AddToRole(u.Id, roles);
+                            if (irr.Succeeded)
+                            {
+                                continue;
+                            } else {
+                                ModelState.AddModelError("", irr.ToString());
+                            }
+                        } else {
+                            ModelState.AddModelError("", irc.ToString());
+                        }
+                        break;
+                    case RMStateEnum.Deleted:
+                        UserManager.Delete(u);
+                        break;
+                    case RMStateEnum.Dirty:
+                        UserManager.Update(u);
+                        break;
+                    case RMStateEnum.Unadded:
+                    case RMStateEnum.Clean:
+                    default:
+                        break;
+                }
+            }
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]

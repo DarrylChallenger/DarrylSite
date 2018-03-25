@@ -31,6 +31,30 @@ select,
 textarea {
     max-width: 280px;
 }
+/**********************************************************************************************************/
+/* This section allows edites to be sized by columns. Annoyingly, I had to redefine col width definitions */
+/* Don't need unless using BS edits
+.form-control {
+    width: unset;
+}
+*/
+
+.form-horizontal .contorl-label-left {
+    text-align: left;
+}
+
+.col-md-2 {
+    width:16.666%;
+}
+
+.col-md-3 {
+    width: 25%
+}
+
+.col-md-4 {
+    width: 33%;
+}
+/**********************************************************************************************************/
 .brandtext {
     font-family:'Times New Roman', Times, serif;
     font-weight:700;
@@ -553,3 +577,10 @@ background: rgba(0, 0, 0, 0.7);
     border-width: 1px;
 }
 
+.ManageUsersAddBtn {
+    color:green;
+}
+
+.ManageUsersDelBtn {
+    color:red;
+}

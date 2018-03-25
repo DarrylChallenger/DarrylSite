@@ -89,6 +89,57 @@ namespace DarrylSite.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public enum RMStateEnum { Clean, Dirty, Added, Deleted, Unadded}
+
+    public class ManageUserUserModel
+    {
+        public ManageUserUserModel()
+        {
+            State = RMStateEnum.Clean;
+        }
+        public string Id { get; set; }
+
+        /*[Required]  Added Role */
+        [Display(Name = "User Roles")]
+        public string UserRoles { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
+        /*[Required]  Added User name */
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
+
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name ="Phone Number")]
+        public string Phone { get; set; }
+
+        public RMStateEnum State { get; set; }
+
+    }
+
+    public class ManageUserModel
+    {
+        public ManageUserModel()
+        {
+
+        }
+        public List<ManageUserUserModel> users { get; set; }
+    }
+
     public class ResetPasswordViewModel
     {
         [Required]

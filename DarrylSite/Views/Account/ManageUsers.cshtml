@@ -1,0 +1,63 @@
+﻿@model DarrylSite.Models.ManageUserModel
+@{
+    ViewBag.Title = "ManageUsers";
+}
+
+<h2>ManageUsers</h2>
+
+<div>
+    @using (Html.BeginForm("ManageUsers", "Account", FormMethod.Post, new { id = "ManageUsersForm" }))
+    {
+        if (Model != null && Model.users != null && Model.users.Count() > 0)
+        {
+            <div id="ManageUsersTableHeader">
+                @Html.LabelFor(model => model.users[0].UserName, htmlAttributes: new { @class = "control-label contorl-label-left col-md-2" })
+                @Html.LabelFor(model => model.users[0].Password, htmlAttributes: new { @class = "control-label contorl-label-left col-md-2" })
+                @Html.LabelFor(model => model.users[0].ConfirmPassword, htmlAttributes: new { @class = "control-label contorl-label-left col-md-2" })
+                @Html.LabelFor(model => model.users[0].Email, htmlAttributes: new { @class = "control-label contorl-label-left col-md-2" })
+                @Html.LabelFor(model => model.users[0].Phone, htmlAttributes: new { @class = "control-label contorl-label-left col-md-2" })
+            </div>
+            <div id="ManageUsersTableData">
+                @for (int i = 0; i < Model.users.Count(); i++)
+                {
+                    <div class="ManageUsersTableRowContainer">
+                        @Html.HiddenFor(model => model.users[i].State, new { @class = "ManageUsersState" })
+                        <div class="row ManageUsersTableRowData">
+                            @Html.HiddenFor(model => Model.users[i].Id)
+                            @Html.EditorFor(model => model.users[i].UserName, new { htmlAttributes = new { @class = " col-md-2" } })
+                            @Html.EditorFor(model => model.users[i].Password, new { htmlAttributes = new { @class = "col-md-2" } })
+                            @Html.EditorFor(model => model.users[i].ConfirmPassword, new { htmlAttributes = new { @class = " col-md-2" } })
+                            @Html.EditorFor(model => model.users[i].Email, new { htmlAttributes = new { @class = " col-md-2" } })
+                            @Html.EditorFor(model => model.users[i].Phone, new { htmlAttributes = new { @class = " col-md-2" } })
+                        </div>
+                        <div class="row ManageUsersTableRowValidation">
+                            @Html.ValidationMessageFor(model => model.users[i].UserName, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.users[i].Password, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.users[i].ConfirmPassword, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.users[i].Email, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.users[i].Phone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                }
+            </div>
+            <p></p>
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <p></p>
+        }
+        else
+        {
+            <p>There are no registered users!</p>
+        }
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/RowManager.js")
+    @Scripts.Render("~/Scripts/SetupContacts-ManageUsers.js")
+}

@@ -43,11 +43,11 @@ namespace DarrylSite
                 
                 //Here we create a Admin super user who will maintain the website                  
 
-                var user = new Models.ApplicationUser();
-                user.UserName = "Darryl";
+                var user = new ApplicationUser();
+                user.UserName = "DZone720@nyc.rr.com";
                 user.Email = "DZone720@nyc.rr.com";
 
-                string userPWD = "Admin1";
+                string userPWD = "Administrator1!";
 
                 var chkUser = UserManager.Create(user, userPWD);
 
@@ -57,9 +57,22 @@ namespace DarrylSite
                     var result1 = UserManager.AddToRole(user.Id, "Admin");
 
                 }
+
+                ApplicationUser u = new ApplicationUser();
+                u.UserName = "darryl.challenger@gmail.com";
+                u.Email = "darryl.challenger@gmail.com";
+                string uPWD = "Administrator1!";
+                IdentityResult irc, irr;
+                irc = UserManager.Create(u, uPWD);
+                if (irc.Succeeded)
+                {
+                    irr = UserManager.AddToRole(u.Id, "Admin");
+                }
             }
+
             
-            // creating Creating Manager role    
+
+            // creating Creating Visitor role    
             if (!roleManager.RoleExists("Visitor"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();

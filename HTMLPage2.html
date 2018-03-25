@@ -1,0 +1,30 @@
+﻿<input name="users[2].State" class="ManageUsersState" id="users_2__State" type="hidden" value="Added" data-val-required="The State field is required." data-val="true">
+<div class="row ManageUsersTableRowContent">
+    <div class="col-sm-1 ">
+        <button class="btn btn-default ManageUsersAddBtn" id="ManageUsersAddBtn_2" onclick="AddRow(2)" type="button">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </div>
+    <div class="col-sm-10 ManageUsersTableS2">
+        <div class="row ManageUsersTableRowData">
+            <input name="users[2].Id" id="users_2__Id" type="hidden" value="">
+            <input name="users[2].UserName" class="text-box single-line" id="users_2__UserName" type="text" value="">
+            <input name="users[2].Password" class="text-box single-line password" id="users_2__Password" type="password" value="" data-val-required="The Password field is required." data-val="true" data-val-length-min="6" data-val-length-max="100" data-val-length="The Password must be at least 6 characters long.">
+            <input name="users[2].ConfirmPassword" class="text-box single-line password" id="users_2__ConfirmPassword" type="password" value="" data-val="true" data-val-equalto-other="*.Password" data-val-equalto="The password and confirmation password do not match.">
+            <input name="users[2].Email" class="text-box single-line" id="users_2__Email" type="email" value="" data-val-required="The Email field is required." data-val="true" data-val-email="The Email field is not a valid e-mail address.">
+            <input name="users[2].Phone" class="text-box single-line" id="users_2__Phone" type="tel" value="">
+        </div>
+    </div>
+    <div class="col-sm-1">
+        <button class="btn btn-default ManageUsersDelBtn" id="ManageUsersDelBtn_2" onclick="DelRow(2)" type="button">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+    </div>
+</div>
+<div class="row ManageUsersTableRowValidation">
+    <span class="field-validation-valid text-danger" data-valmsg-replace="true" data-valmsg-for="users[2].UserName" name="UserName"></span>
+    <span class="field-validation-valid text-danger" data-valmsg-replace="true" data-valmsg-for="users[2].Password" name="Password"></span>
+    <span class="field-validation-valid text-danger" data-valmsg-replace="true" data-valmsg-for="users[2].ConfirmPassword" name="ConfirmPassword"></span>
+    <span class="field-validation-valid text-danger" data-valmsg-replace="true" data-valmsg-for="users[2].Email" name="Email"></span>
+    <span class="field-validation-valid text-danger" data-valmsg-replace="true" data-valmsg-for="users[2].Phone" name="Phone"></span>
+</div> 
