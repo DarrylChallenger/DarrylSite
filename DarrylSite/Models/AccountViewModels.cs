@@ -103,7 +103,7 @@ namespace DarrylSite.Models
         [Display(Name = "User Roles")]
         public string UserRoles { get; set; }
 
-        [Required]
+        
         [EmailAddress]
         [Display(Name = "Email")]
         [DataType(DataType.EmailAddress)]

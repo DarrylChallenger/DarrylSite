@@ -204,6 +204,7 @@ namespace DarrylSite.Controllers
         public ActionResult ManageUsers(ManageUserModel model)
         {
             SaveUsers(model.users);
+            
             return View(model);
         }
 
@@ -212,6 +213,18 @@ namespace DarrylSite.Controllers
             foreach(ManageUserUserModel muum in users)
             {
                 ApplicationUser u = new ApplicationUser();
+                if (muum.UserName == "") 
+                {
+                    ModelState.AddModelError("UserName", "UserName cannot be blank");
+                }
+                if ( muum.Email == "")
+                {
+                    ModelState.AddModelError("UserName", "Email cannot be blank");
+                }
+                if (!ModelState.IsValid)
+                {
+                    return;
+                }
                 u.UserName = muum.UserName;
                 u.Email = muum.Email;
                 string uPWD = muum.Password;
@@ -224,15 +237,20 @@ namespace DarrylSite.Controllers
                         irc = UserManager.Create(u, uPWD);
                         if (irc.Succeeded)
                         {
-                            irr = UserManager.AddToRole(u.Id, roles);
-                            if (irr.Succeeded)
+                            if (roles != null && roles != "")
                             {
-                                continue;
-                            } else {
-                                ModelState.AddModelError("", irr.ToString());
+                                irr = UserManager.AddToRole(u.Id, roles);
+                                if (irr.Succeeded)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    AddIndentityErrorsToModelState(irr);
+                                }
                             }
                         } else {
-                            ModelState.AddModelError("", irc.ToString());
+                            AddIndentityErrorsToModelState(irc);
                         }
                         break;
                     case RMStateEnum.Deleted:
@@ -246,6 +264,14 @@ namespace DarrylSite.Controllers
                     default:
                         break;
                 }
+            }
+        }
+
+        void AddIndentityErrorsToModelState(IdentityResult ir)
+        {
+            foreach(string s in ir.Errors)
+            {
+                ModelState.AddModelError("", s);
             }
         }
         //

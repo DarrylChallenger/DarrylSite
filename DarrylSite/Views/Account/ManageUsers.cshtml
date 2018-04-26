@@ -10,6 +10,9 @@
     {
         if (Model != null && Model.users != null && Model.users.Count() > 0)
         {
+            <div>
+                @Html.ValidationSummary(false, null, new  { @class = "text-danger"})
+            </div>
             <div id="ManageUsersTableHeader">
                 @Html.LabelFor(model => model.users[0].UserName, htmlAttributes: new { @class = "control-label contorl-label-left col-md-2" })
                 @Html.LabelFor(model => model.users[0].Password, htmlAttributes: new { @class = "control-label contorl-label-left col-md-2" })
@@ -24,11 +27,12 @@
                         @Html.HiddenFor(model => model.users[i].State, new { @class = "ManageUsersState" })
                         <div class="row ManageUsersTableRowData">
                             @Html.HiddenFor(model => Model.users[i].Id)
-                            @Html.EditorFor(model => model.users[i].UserName, new { htmlAttributes = new { @class = " col-md-2" } })
+                            @Html.EditorFor(model => model.users[i].UserName, new { htmlAttributes = new { @class = "col-md-2" } })
                             @Html.EditorFor(model => model.users[i].Password, new { htmlAttributes = new { @class = "col-md-2" } })
-                            @Html.EditorFor(model => model.users[i].ConfirmPassword, new { htmlAttributes = new { @class = " col-md-2" } })
-                            @Html.EditorFor(model => model.users[i].Email, new { htmlAttributes = new { @class = " col-md-2" } })
-                            @Html.EditorFor(model => model.users[i].Phone, new { htmlAttributes = new { @class = " col-md-2" } })
+                            @Html.EditorFor(model => model.users[i].ConfirmPassword, new { htmlAttributes = new { @class = "col-md-2" } })
+                            @Html.EditorFor(model => model.users[i].Email, new { htmlAttributes = new { @class = "requiredifnotremoved col-md-2" } })
+                            @Html.EditorFor(model => model.users[i].Phone, new { htmlAttributes = new { @class = "col-md-2" } })
+                            <p class="col-md-2">Companies</p>
                         </div>
                         <div class="row ManageUsersTableRowValidation">
                             @Html.ValidationMessageFor(model => model.users[i].UserName, "", new { @class = "text-danger" })

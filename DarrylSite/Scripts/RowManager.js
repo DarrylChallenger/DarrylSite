@@ -207,7 +207,7 @@ $(function () { // set name = field name in each cell;don't include id
             return true;
         }
         return rt = $.validator.methods.required.call(this, value, element);
-    }, "Client name should not be blank.");
+    }, "Field is required.");
     console.log("Ready done.");
 });
 

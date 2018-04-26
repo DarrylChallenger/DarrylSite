@@ -68,9 +68,14 @@ namespace DarrylSite
                 {
                     irr = UserManager.AddToRole(u.Id, "Admin");
                 }
+
+                u.UserName = "Reguser@gmail.com";
+                u.Email = "Reguser@gmail.com";
+                uPWD = "reguser";
+                irc = UserManager.Create(u, uPWD);
             }
 
-            
+
 
             // creating Creating Visitor role    
             if (!roleManager.RoleExists("Visitor"))

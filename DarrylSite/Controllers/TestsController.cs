@@ -276,5 +276,15 @@ namespace DarrylSite.Controllers
             return View(array);
 
         }
+
+        public ActionResult Payments()
+        {
+            return View();
+        }
+
+        public ActionResult ActiveDirectory()
+        {
+            return View();
+        }
     }
 }
