@@ -1,4 +1,6 @@
-﻿
+﻿@model DarrylSite.Models.PaymentModel
+@using DarrylSite.Classes
+
 @{
     ViewBag.Title = "Payments";
     Layout = "~/Views/Tests/_TestsLayout.cshtml";
@@ -31,4 +33,87 @@
 
 <h3>Stripe</h3>
 
+<div>
+    <p>Submit card info for $9.99 charge</p>
+    <div class="StripeBorder">
+        @using (Html.BeginForm("StripeButton", "Tests", FormMethod.Post, new { id = "StripeButtonForm" }))
+        {
+            <div id="StripePaymentRequestButton">
+                <!-- Stripe element will be here -->
+            </div>
+        }
+    </div>
+    <div class="StripeBorder">
+        @using (Html.BeginForm("Charge", "Tests", FormMethod.Post, new { id = "StripeForm" }))
+        {
+            <div class="form-row">
+                <label for="card-element">
+                    Credit or debit card
+                </label>
+                <div id="card-element">
+                    <!-- A Stripe Element will be inserted here. -->
+                </div>
 
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert" class="text-danger"></div>
+            </div>
+            <br />
+            <button id="subBtn">Submit Payment</button>
+        }
+    </div>
+    <div class="StripeBorder">
+        @using (Html.BeginForm("AddStripeCustomer", "Tests", FormMethod.Post, new { id = "StripeSaveCustomerForm" }))
+        {
+            <p>Save card Info in a Stripe customer</p>
+            <br />
+            <button id="subCustBtn">Add Customer(notimpl)</button>
+        }
+    </div>
+    <div class="StripeBorder">
+        @using (Html.BeginForm("Charge", "Tests", FormMethod.Post, new { id = "StripeSimpleCheckoutForm" }))
+        {
+            <p><ul>Checkout Simple</ul></p>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_9VBmb0MLFOio86PO162GMNFp"
+                    data-amount="999"
+                    data-name="Challenger Technology Solutions"
+                    data-description="Widget"
+                    data-zip-code="true"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto">
+            </script>
+            <br />
+            <button id="subSimplePayBtn">Simple Payment</button>
+        }
+    </div>
+    <div class="StripeBorder">
+        @using (Html.BeginForm("Charge", "Tests", FormMethod.Post, new { id = "StripeCustomCheckoutForm" }))
+        {
+            <p><ul>Checkout Custom</ul></p>
+            <br />
+            <button id="subCustPayBtn">Custom Payment</button>
+        }
+    </div>
+    <p></p>
+    <div class="StripeBorder">
+        <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_Bil3yXbf2LC3dxUr0RnuQoytgoq5X16j&scope=read_write"><img src="~/Images/blue-on-light.png" /> Create a Standard Swipe Account</a>
+    </div>
+    <div class="StripeBorder">
+        <a href="https://connect.stripe.com/express/oauth/authorize?response_type=code&client_id=ca_Bil3yXbf2LC3dxUr0RnuQoytgoq5X16j&scope=read_write"><img src="~/Images/light-on-light.png" /> Create an Express Swipe Account</a>
+    </div>
+    <div class="StripeBorder" display="none">
+        <form action="https://connect.stripe.com/oauth/token">
+            <input name="client_secret" />
+            <input name="code" />
+            <input name="grant_type" value="authorization_code" />
+            <button id="subSimplePayBtn" type="submit">Get user creds</button>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    @Scripts.Render("https://js.stripe.com/v3/")
+    @Scripts.Render("~/Scripts/StripeHandler.js")
+}

@@ -1,0 +1,26 @@
+﻿@model DarrylSite.Models.PaymentModel
+
+@{
+    ViewBag.Title = "Charge";
+    Layout = "~/Views/Tests/_TestsLayout.cshtml";
+}
+
+<h2>Charge</h2>
+<p>token=[@Model.StripeData.tokenId], livemode=@Model.StripeData.livemode, type=[@Model.StripeData.type], used=@Model.StripeData.used</p>
+@if (Model.appError != null)
+{
+    <p>Charge failed!</p>
+    <p>@Model.appError</p>
+}
+@if (Model.StripeData.charge != null)
+{
+    <p>Charge was successful!</p>
+    <p>Charge Outcome Data:</p>
+} 
+@if(Model.StripeData.stripeError !=null)
+{
+    <p>Charge threw an error!</p>
+    <p>@Model.StripeData.stripeError.Message</p>
+}
+<p></p>
+<link href="~/Content/Site.css" rel="stylesheet" />

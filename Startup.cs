@@ -104,7 +104,6 @@ namespace DarrylSite
         {
             StripeConstants.publicKey = ConfigurationManager.AppSettings["publicKey"];
             StripeConstants.secretKey = ConfigurationManager.AppSettings["secretKey"];
-            StripeConstants.clientId = ConfigurationManager.AppSettings["clientId"];
         }
     }
 }

@@ -11,6 +11,8 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.IO;
 using DarrylSite.Models;
+using System.Configuration;
+using Stripe;
 
 namespace DarrylSite.Controllers
 {
@@ -279,7 +281,52 @@ namespace DarrylSite.Controllers
 
         public ActionResult Payments()
         {
-            return View();
+            //StripeConstants.publicKey = ConfigurationManager.AppSettings["publicKey"];
+            PaymentModel pm = new PaymentModel();
+            return View(pm);
+        }
+
+        [HttpPost]
+        public ActionResult Charge(PaymentModel pm)
+        {
+            StripeConfiguration.SetApiKey(StripeConstants.secretKey = ConfigurationManager.AppSettings["secretKey"]);
+            if (pm.StripeData.livemode == true)
+            {
+                pm.appError = "A live key was provided; this app only processes test mode.";
+            }
+            else
+            {
+                //Handle Simple Checkout form data
+                string custEmail = "Contact@dctecnologysolutions.com";
+
+                if (pm.stripeToken != null)
+                {
+                    pm.StripeData.tokenId = pm.stripeToken;
+                }
+                if (pm.stripeEmail != null)
+                {
+                    custEmail = pm.stripeEmail;
+                }
+                StripeChargeCreateOptions options = new StripeChargeCreateOptions
+                {
+                    Amount = 999,
+                    Currency = "usd",
+                    Description = "Example charge " + DateTime.Now.ToString(),
+                    SourceTokenOrExistingSourceId = pm.StripeData.tokenId,
+                    StatementDescriptor = "Descriptor",
+                    ReceiptEmail = custEmail
+                };
+                var service = new StripeChargeService();
+                try
+                {
+                    pm.StripeData.charge = service.Create(options);
+                }
+                catch (StripeException e)
+                {
+                    pm.StripeData.stripeError = e.StripeError;
+                }
+            }
+            return View(pm);
         }
 
         public ActionResult ActiveDirectory()

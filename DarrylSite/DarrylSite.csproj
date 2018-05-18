@@ -204,6 +204,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\GlobalConstants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -217,6 +218,7 @@
     <Compile Include="Models\FormsModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PaymentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -225,6 +227,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Stripe.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\001-graphic.png" />
     <Content Include="Images\001-graphicWhite.png" />
@@ -233,6 +236,7 @@
     <Content Include="Images\004-man.png" />
     <Content Include="Images\005-business-1.png" />
     <Content Include="Images\006-business.png" />
+    <Content Include="Images\blue-on-light.png" />
     <Content Include="Images\BlueBlock.jpg" />
     <Content Include="Images\BlueCirc.jpg" />
     <Content Include="Images\business-people-meeting.png" />
@@ -262,12 +266,14 @@
     <Content Include="Images\In-2C-28px-R.png" />
     <Content Include="Images\Instagrarm-glyph-logo_May2016.png" />
     <Content Include="Images\Kinect.png" />
+    <Content Include="Images\light-on-light.png" />
     <Content Include="Images\metal10.jpg" />
     <Content Include="Images\metal2.jpg" />
     <Content Include="Images\metal3.jpg" />
     <Content Include="Images\metal4.jpg" />
     <Content Include="Images\MetalBG1.png" />
     <Content Include="Images\Mosaic.jpg" />
+    <Content Include="Images\OJLogo.png" />
     <Content Include="Images\PaperBG1.png" />
     <Content Include="Images\RedBlock.jpg" />
     <Content Include="Images\settings-gears.png" />
@@ -321,12 +327,16 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\RowManager.js" />
     <Content Include="Scripts\SetupContacts-ManageUsers.js" />
+    <Content Include="Scripts\StripeHandler.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Content\GreyPprMetal.css" />
+    <None Include="Secrets.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -397,6 +407,7 @@
     <Content Include="Views\Account\ManageUsers.cshtml" />
     <Content Include="Views\Tests\Payments.cshtml" />
     <Content Include="Views\Tests\ActiveDirectory.cshtml" />
+    <Content Include="Views\Tests\Charge.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

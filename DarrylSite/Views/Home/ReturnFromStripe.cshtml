@@ -1,8 +1,18 @@
 ﻿
 @{
     ViewBag.Title = "ReturnFromStripe";
-   
+
 }
 
 <h2>ReturnFromStripe</h2>
 
+<p>Keys(code=[@ViewBag.stripeCode])</p>
+
+@foreach (string p in Request.QueryString.AllKeys)
+{
+    <p>[@p]:[@Request.QueryString[@p]]</p>
+
+}
+
+Post Data
+<p>code=[@ViewBag.statusCode]</p>
