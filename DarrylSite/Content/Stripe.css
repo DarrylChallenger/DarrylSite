@@ -28,7 +28,13 @@
     background-color: #fefde5;
 }
 
+.StripePayNowBtn
+{
+    height:60px;
+    width:320px;
+}
+
 .StripeBorder {
-    border-style:solid;
-    border-color:green;
+    border-style: solid;
+    border-color: green;
 }

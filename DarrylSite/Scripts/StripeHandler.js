@@ -4,6 +4,8 @@ var stripe = Stripe('pk_test_9VBmb0MLFOio86PO162GMNFp');
 // Create an instance of Elements.
 var elements = stripe.elements();
 
+
+
 // Custom styling can be passed to options when creating an Element.
 // (Note that this demo uses a wider set of styles than the guide below.)
 var style = {
@@ -22,6 +24,55 @@ var style = {
         iconColor: '#fa755a'
     }
 };
+
+//Stripe payment button
+var paymentRequest = stripe.paymentRequest({
+    country: 'US',
+    currency: 'usd',
+    total: {
+        label: 'Demo total',
+        amount: 1999
+    }
+});
+
+var elements = stripe.elements();
+var prButton = elements.create('paymentRequestButton', {
+    paymentRequest: paymentRequest
+});
+
+// Check the availability of the Payment Request API first.
+paymentRequest.canMakePayment().then(function (result) {
+    console.log("in canMakePayment");
+    if (result) {
+        prButton.mount('#StripePaymentRequestButton');
+    } else {
+        document.getElementById('StripePaymentRequestButton').style.display = 'disabled';
+    }
+});
+
+paymentRequest.on('token', function (ev) {
+    // Send the token to your server to charge it!
+    fetch('/charges', {
+        method: 'POST',
+        body: JSON.stringify({ token: ev.token.id }),
+        headers: { 'content-type': 'application/json' }
+    })
+        .then(function (response) {
+            if (response.ok) {
+                // Report to the browser that the payment was successful, prompting
+                // it to close the browser payment interface.
+                alert("Payment Successful!");
+                ev.complete('success');
+            } else {
+                // Report to the browser that the payment failed, prompting it to
+                // re-show the payment interface, or show an error message and close
+                // the payment interface.
+                alert("Payment Failed!");
+                ev.complete('fail');
+            }
+        });
+});
+
 
 // Create an instance of the card Element.
 var card = elements.create('card', { style: style });
@@ -140,7 +191,7 @@ document.getElementById('subCustPayBtn').addEventListener('click', function (e) 
     custHandler.open({
         name: 'Challenger Technology Solutions',
         description: '2 widgets',
-        amount: 2000,
+        amount: 2345,
         zipCode: true,
         email: "test@darryl.com",
         billingaddress: true
@@ -153,50 +204,3 @@ window.addEventListener('popstate', function () {
     handler.close();
 });
 
-//Stripe payment button
-var paymentRequest = stripe.paymentRequest({
-    country: 'US',
-    currency: 'usd',
-    total: {
-        label: 'Demo total',
-        amount: 1999
-    }
-});
-
-var elements = stripe.elements();
-var prButton = elements.create('paymentRequestButton', {
-    paymentRequest: paymentRequest
-});
-
-// Check the availability of the Payment Request API first.
-paymentRequest.canMakePayment().then(function (result) {
-    console.log("in canMakePayment");
-    if (result) {
-        prButton.mount('#StripePaymentRequestButton');
-    } else {
-        document.getElementById('StripePaymentRequestButton').style.display = 'disabled';
-    }
-});
-
-paymentRequest.on('token', function (ev) {
-    // Send the token to your server to charge it!
-    fetch('/charges', {
-        method: 'POST',
-        body: JSON.stringify({ token: ev.token.id }),
-        headers: { 'content-type': 'application/json' }
-    })
-        .then(function (response) {
-            if (response.ok) {
-                // Report to the browser that the payment was successful, prompting
-                // it to close the browser payment interface.
-                alert("Payment Successful!");
-                ev.complete('success');
-            } else {
-                // Report to the browser that the payment failed, prompting it to
-                // re-show the payment interface, or show an error message and close
-                // the payment interface.
-                alert("Payment Failed!");
-                ev.complete('fail');
-            }
-        });
-});

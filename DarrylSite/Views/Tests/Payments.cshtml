@@ -38,7 +38,8 @@
     <div class="StripeBorder">
         @using (Html.BeginForm("StripeButton", "Tests", FormMethod.Post, new { id = "StripeButtonForm" }))
         {
-            <div id="StripePaymentRequestButton">
+            <div id="StripePaymentRequestButton" class="StripePayNowBtn">
+                <p>Pay Now button</p>
                 <!-- Stripe element will be here -->
             </div>
         }
@@ -72,18 +73,19 @@
     <div class="StripeBorder">
         @using (Html.BeginForm("Charge", "Tests", FormMethod.Post, new { id = "StripeSimpleCheckoutForm" }))
         {
+            @Html.HiddenFor(model => model.StripeData.checkoutAmount)
             <p><ul>Checkout Simple</ul></p>
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="pk_test_9VBmb0MLFOio86PO162GMNFp"
-                    data-amount="999"
+                    data-amount="@Model.StripeData.checkoutAmount"
                     data-name="Challenger Technology Solutions"
-                    data-description="Widget"
+                    data-description="Simple"
                     data-zip-code="true"
                     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                     data-locale="auto">
             </script>
             <br />
-            <button id="subSimplePayBtn">Simple Payment</button>
+            <!--<button id="subSimplePayBtn">Simple Payment</button>-->
         }
     </div>
     <div class="StripeBorder">
@@ -100,15 +102,6 @@
     </div>
     <div class="StripeBorder">
         <a href="https://connect.stripe.com/express/oauth/authorize?response_type=code&client_id=ca_Bil3yXbf2LC3dxUr0RnuQoytgoq5X16j&scope=read_write"><img src="~/Images/light-on-light.png" /> Create an Express Swipe Account</a>
-    </div>
-    <div class="StripeBorder" display="none">
-        <form action="https://connect.stripe.com/oauth/token">
-            <input name="client_secret" />
-            <input name="code" />
-            <input name="grant_type" value="authorization_code" />
-            <button id="subSimplePayBtn" type="submit">Get user creds</button>
-
-        </form>
     </div>
 </div>
 

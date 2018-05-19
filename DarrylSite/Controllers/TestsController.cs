@@ -290,11 +290,14 @@ namespace DarrylSite.Controllers
         public ActionResult Charge(PaymentModel pm)
         {
             StripeConfiguration.SetApiKey(StripeConstants.secretKey = ConfigurationManager.AppSettings["secretKey"]);
-            if (pm.StripeData.livemode == true)
+            //if (pm.StripeData.livemode == true)
+            /*
+            if (false)
             {
                 pm.appError = "A live key was provided; this app only processes test mode.";
             }
             else
+            */
             {
                 //Handle Simple Checkout form data
                 string custEmail = "Contact@dctecnologysolutions.com";
@@ -309,7 +312,7 @@ namespace DarrylSite.Controllers
                 }
                 StripeChargeCreateOptions options = new StripeChargeCreateOptions
                 {
-                    Amount = 999,
+                    Amount = pm.StripeData.checkoutAmount,
                     Currency = "usd",
                     Description = "Example charge " + DateTime.Now.ToString(),
                     SourceTokenOrExistingSourceId = pm.StripeData.tokenId,

@@ -25,6 +25,8 @@ namespace DarrylSite.Models
             // set these two values to ture to ensure proper behavior
             livemode = true;
             used = true;
+            checkoutAmount = 998;
+
         }
         //public StripeConstants stripeConstants { get; set; }
         public string publicKey { get; set; }
@@ -36,6 +38,7 @@ namespace DarrylSite.Models
         public string type { get; set; }
         public bool used { get; set; }
         public string stripeEmail { get; set; }
+        public int checkoutAmount { get; set; }
     }
     public class PaymentModel
     {
