@@ -16,6 +16,7 @@ namespace DarrylSite
             ConfigureAuth(app);
             createRolesandUsers();//https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97
             ConfigureStripe();
+            ConfigurePayPal();
         }
         // In this method we will create default User roles and Admin user for login   
         private void createRolesandUsers()
@@ -102,9 +103,14 @@ namespace DarrylSite
 
         private void ConfigureStripe()
         {
-            StripeConstants.publicKey = ConfigurationManager.AppSettings["publicKey"];
-            StripeConstants.secretKey = ConfigurationManager.AppSettings["secretKey"];
-            StripeConstants.clientId = ConfigurationManager.AppSettings["clientId"];
+            StripeConfig.publicKey = ConfigurationManager.AppSettings["publicKey"];
+            StripeConfig.secretKey = ConfigurationManager.AppSettings["secretKey"];
+            StripeConfig.clientId = ConfigurationManager.AppSettings["clientId"];
+        }
+        private void ConfigurePayPal()
+        {
+            PayPalConfig.secretKey = ConfigurationManager.AppSettings["ppSecretKey"];
+            PayPalConfig.clientId = ConfigurationManager.AppSettings["ppClientId"];
         }
     }
 }

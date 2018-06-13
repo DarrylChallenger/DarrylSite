@@ -7,10 +7,18 @@ using System.Web;
 
 namespace DarrylSite.Models
 {
-    public class StripeConstants
+    public class StripeConfig
     {
         public static string token { get; set; }
         public static string publicKey { get; set; }
+        public static string secretKey { get; set; }
+        public static string clientId { get; set; }
+    }
+
+    public class PayPalConfig
+    {
+        //public static string token { get; set; }
+        //public static string publicKey { get; set; }
         public static string secretKey { get; set; }
         public static string clientId { get; set; }
     }
@@ -47,7 +55,7 @@ namespace DarrylSite.Models
             PayPalData = new PayPalModel();
             StripeData = new StripeModel();
             //StripeData.publicKey = StripeConstants.publicKey;
-            StripeData.clientId = StripeConstants.clientId;
+            StripeData.clientId = StripeConfig.clientId;
             appError = null;
         }
         public PayPalModel PayPalData { get; set; }

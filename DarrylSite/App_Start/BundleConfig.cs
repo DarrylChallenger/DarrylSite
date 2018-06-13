@@ -29,7 +29,8 @@ namespace DarrylSite
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/Stripe.css"));
+                      "~/Content/Stripe.css",
+                      "~/Content/PayPal.css"));
         }
     }
 }

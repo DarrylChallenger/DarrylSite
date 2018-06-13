@@ -124,6 +124,9 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
     <Reference Include="Stripe.net, Version=13.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Stripe.net.13.0.1\lib\net45\Stripe.net.dll</HintPath>
     </Reference>
@@ -227,6 +230,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Parallax.css" />
+    <Content Include="Content\PayPal.css" />
     <Content Include="Content\Stripe.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\001-graphic.png" />
@@ -408,6 +413,9 @@
     <Content Include="Views\Tests\Payments.cshtml" />
     <Content Include="Views\Tests\ActiveDirectory.cshtml" />
     <Content Include="Views\Tests\Charge.cshtml" />
+    <Content Include="Views\Tests\PayPalCreatePaymentReturn.cshtml" />
+    <Content Include="Views\Tests\PayPalCreatePaymentCancel.cshtml" />
+    <Content Include="Views\Tests\PayPalError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

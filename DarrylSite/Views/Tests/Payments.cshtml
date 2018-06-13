@@ -8,7 +8,7 @@
 
 <h2>Payments</h2>
 <h3>PayPal</h3>
-<div>
+<div class="PayPalBorder">
     <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <div style="width:70%;padding:0 10pt 0 0;float:left;">
             <h4>Individual Instruction: $60/hour</h4>
@@ -17,9 +17,9 @@
             <input name="cmd" type="hidden" value="_s-xclick" /><input name="hosted_button_id" type="hidden" value="NXDRC7LHDDCXU" /><input alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" type="image" />
         </div>
     </form>
-</div>
+</div> <!-- simple button -->
 
-<div>
+<div class="PayPalBorder">
     <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <div style="width:70%;padding:0 10pt 0 0;float:left;">
             <h4>Group Instruction (3 or more): $30/hour</h4>
@@ -28,8 +28,177 @@
             <input name="cmd" type="hidden" value="_s-xclick" /><input name="hosted_button_id" type="hidden" value="UHPS5XCJ73H9U" /><input alt="PayPal - The safer, easier way to pay online!" name="submit" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" type="image" />
         </div>
     </form>
-</div>
+</div> <!-- simple button -->
 
+<div class="PayPalBorder">
+    Client-side Simple PayPal Button
+    <div id="SimplePayPalBtn"></div>
+    <script>
+        paypal.Button.render({
+            env: 'sandbox', // Or 'sandbox',
+            commit: true, // Show a 'Pay Now' button
+            client: {
+                sandbox: 'AeXZWqBXt7O1yxFuharPp_NgVbiGWUd2BQgqMiFghdYFGmn_0CZKurlj8_YRFKG-wKwZcNZh0Ah0ZE6s'
+            },
+            style: {
+                label: 'buynow',
+                color: 'gold',
+                size: 'small',
+                shape: 'pill',
+                tagline: false,
+                fundingicons: true
+            },
+            payment: function (data, actions) {
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: '1.01', currency: 'USD' }
+                            }
+                        ]
+                    }
+                })
+            },
+            onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function (payment) {
+                    alert("Payment Valid");
+                });
+            },
+            onCancel: function (data, actions) {
+                /*
+                 * Buyer cancelled the payment
+                 */
+            },
+            onError: function (err) {
+                /*
+                 * An error occurred during the transaction
+                 */
+            }
+        }, '#SimplePayPalBtn');
+    </script>
+</div> <!-- Client Side buttons -->
+
+<div class="PayPalBorder">
+    Server-side Simple PayPal Button
+    <div id="ServerPayPalBtn"></div>
+    <script>
+        paypal.Button.render({
+            env: 'sandbox', // Or 'sandbox',
+
+            commit: true, // Show a 'Pay Now' button
+
+            style: {
+                color: 'gold',
+                size: 'small'
+            },
+
+            payment: function () { // send product ID to server
+                /*
+                 * Set up the payment here
+                 */
+                //return paypal.request.post(CREATE_PAYMENT_URL).then(function (data) {
+                return paypal.request.post('@Url.Action("PayPalCreatePayment")')
+                    .then(function (data) {
+                        console.log("after PP payment");
+                        console.log(data.id);
+                        return data.id;
+                    });
+            },
+
+            onAuthorize: function (data) { //
+                /*
+                 * Execute the payment here
+                 */
+                console.log("In PP onAuthorize");
+                console.log(data);
+                param = JSON.stringify(data);
+                console.log(param);
+                return paypal.request.post('@Url.Action("PayPalExecutePayment")', {
+                    intent: data.intent,
+                    paymentID: data.paymentID,
+                    payerID: data.payerID,
+                    orderId: data.orderID,
+                    token: data.paymentToken,
+                    returnURL: data.returnUrl,
+                    param: param
+                }).then(function () {
+                    console.log("after PP onAuthorize PP payment");
+                    console.log(data);
+                    param = JSON.stringify(data);
+                    console.log(param);
+                    // The payment is complete!
+                    // You can now show a confirmation message to the customer
+                    return paypal.request.post('@Url.Action("PayPalCreatePaymentReturn")', {
+                        intent: data.intent,
+                        orderId: data.orderId,
+                        paymentID: data.paymentID,
+                        payerID: data.payerID,
+                        returnUrl: data.returnUrl,
+                        param: param
+                    });
+                });
+            },
+            onCancel: function (data) {
+                console.log("in onCancel");
+                console.log(data);
+                param = JSON.stringify(data);
+                console.log(param);
+                return paypal.request.post('@Url.Action("PayPalCreatePaymentCancel")', {
+                    intent: data.intent,
+                    paymentID: data.paymentID,
+                    payerID: data.payerID,
+                    billingId: data.billingId,
+                    cancelURL: data.cancelUrl,
+                    token: data.paymentToken,
+                    param: param
+                });
+            },
+            onError: function (data) {
+                console.log("in onError");
+                console.log(data.name);
+                console.log(data.message);
+                console.log(data.information_link);
+                param = JSON.stringify(data);
+                return paypal.request.post('@Url.Action("PayPalError")', {
+                    param: param
+                })
+            },
+        }, '#ServerPayPalBtn');
+    </script>
+</div> <!-- Server side button -->
+
+<div>
+    Stacked buttons
+</div> <!-- stacked (vertical) buttons -->
+
+<div class="PayPalBorder">
+    Create Invoice
+
+    Select Customer:
+    Select Product:
+    Discount:
+</div> <!-- Invoice -->
+
+<div class="PayPalBorder">
+    Add to Shopping Cart buttons
+    <div class="row">
+        <div class="col-sm-6"></div>
+    </div>
+</div> <!-- Simple Add to Shopping Cart button -->
+
+<div class="PayPalBorder">
+    Add to Shopping Cart buttons
+    <div class="row">
+        <div class="col-sm-6"></div>
+    </div>
+</div> <!-- Add to Shopping Cart buuton (client side) -->
+
+<div class="PayPalBorder">
+    Add to Shopping Cart buttons
+    <div class="row">
+        <div class="col-sm-6"></div>
+    </div>
+</div> <!-- Add to Shopping Cart buuton (server side) -->
 
 <h3>Stripe</h3>
 
@@ -74,7 +243,7 @@
         @using (Html.BeginForm("Charge", "Tests", FormMethod.Post, new { id = "StripeSimpleCheckoutForm" }))
         {
             @Html.HiddenFor(model => model.StripeData.checkoutAmount)
-            <p><ul>Checkout Simple</ul></p>
+            <p>Checkout Simple</p>
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="pk_test_9VBmb0MLFOio86PO162GMNFp"
                     data-amount="@Model.StripeData.checkoutAmount"
@@ -91,7 +260,7 @@
     <div class="StripeBorder">
         @using (Html.BeginForm("Charge", "Tests", FormMethod.Post, new { id = "StripeCustomCheckoutForm" }))
         {
-            <p><ul>Checkout Custom</ul></p>
+            <p>Checkout Custom</p>
             <br />
             <button id="subCustPayBtn">Custom Payment</button>
         }
@@ -103,6 +272,9 @@
     <div class="StripeBorder">
         <a href="https://connect.stripe.com/express/oauth/authorize?response_type=code&client_id=ca_Bil3yXbf2LC3dxUr0RnuQoytgoq5X16j&scope=read_write"><img src="~/Images/light-on-light.png" /> Create an Express Swipe Account</a>
     </div>
+    <div class="StripeBorder">
+        Invoice
+    </div>
 </div>
 
 @section Scripts
@@ -110,3 +282,4 @@
     @Scripts.Render("https://js.stripe.com/v3/")
     @Scripts.Render("~/Scripts/StripeHandler.js")
 }
+
