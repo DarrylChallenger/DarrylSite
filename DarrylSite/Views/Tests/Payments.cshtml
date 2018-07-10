@@ -221,7 +221,7 @@
                     Credit or debit card
                 </label>
                 <div id="card-element">
-                    <!-- A Stripe Element will be inserted here. -->
+                    <!-- A Stripe card Element will be inserted here -->
                 </div>
 
                 <!-- Used to display form errors. -->
@@ -232,11 +232,19 @@
         }
     </div>
     <div class="StripeBorder">
-        @using (Html.BeginForm("AddStripeCustomer", "Tests", FormMethod.Post, new { id = "StripeSaveCustomerForm" }))
+        @using (Html.BeginForm("AddCardForCustomer", "Tests", FormMethod.Post, new { id = "StripeSaveCustomerForm" }))
         {
-            <p>Save card Info in a Stripe customer</p>
+            <p>Your Cards</p>
+            <p>...</p>
+            <p>...</p>
             <br />
-            <button id="subCustBtn">Add Customer(notimpl)</button>
+            <label for="CustNewCard">Save your card Info in Stripe</label>
+            <div id="CustNewCard">
+                <!-- A Stripe card Element will be inserted here -->
+            </div>
+            <div id="CustNewCardErrors" role="alert" class="text-danger"></div>
+            <br />
+            <button id="subBtnCustNewCard">Add Card for Customer(notimpl)</button>
         }
     </div>
     <div class="StripeBorder">
@@ -262,7 +270,7 @@
         {
             <p>Checkout Custom</p>
             <br />
-            <button id="subCustPayBtn">Custom Payment</button>
+            <button id="subCustPayBtn">Custom Payment(not impl)</button>
         }
     </div>
     <p></p>

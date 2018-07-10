@@ -4,7 +4,27 @@ var stripe = Stripe('pk_test_9VBmb0MLFOio86PO162GMNFp');
 // Create an instance of Elements.
 var elements = stripe.elements();
 
+$(function () {
+    // #region Add Card
+    /* Add Card for customer */
+    var newCard = elements.create('card', { style: style });
 
+    // Add an instance of the card Element into the `card-element` <div>.
+    newCard.mount('#CustNewCard');
+    console.log("mount #CustNewCard");
+
+    // Handle real-time validation errors from the card Element.
+    card.addEventListener('change', function (event) {
+        var displayError = document.getElementById('CustNewCardErrors');
+        if (event.error) {
+            displayError.textContent = event.error.message;
+        } else {
+            displayError.textContent = '';
+        }
+    });
+// #endregion
+
+})
 
 // Custom styling can be passed to options when creating an Element.
 // (Note that this demo uses a wider set of styles than the guide below.)
@@ -52,7 +72,8 @@ paymentRequest.canMakePayment().then(function (result) {
 
 paymentRequest.on('token', function (ev) {
     // Send the token to your server to charge it!
-    fetch('/charges', {
+    console.log(ev.token);
+    fetch('/api/StripeMsg', {
         method: 'POST',
         body: JSON.stringify({ token: ev.token.id }),
         headers: { 'content-type': 'application/json' }
@@ -61,25 +82,25 @@ paymentRequest.on('token', function (ev) {
             if (response.ok) {
                 // Report to the browser that the payment was successful, prompting
                 // it to close the browser payment interface.
-                alert("Payment Successful!");
+                console.log("PayNow Success");
                 ev.complete('success');
             } else {
                 // Report to the browser that the payment failed, prompting it to
                 // re-show the payment interface, or show an error message and close
                 // the payment interface.
-                alert("Payment Failed!");
+                console.log("PayNow Fail");
                 ev.complete('fail');
             }
         });
 });
 
 
-// Create an instance of the card Element.
+// Create an instance of the card Element for the card payment section.
 var card = elements.create('card', { style: style });
 
 // Add an instance of the card Element into the `card-element` <div>.
 card.mount('#card-element');
-
+console.log("mount #card-element");
 // Handle real-time validation errors from the card Element.
 card.addEventListener('change', function (event) {
     var displayError = document.getElementById('card-errors');
@@ -90,7 +111,7 @@ card.addEventListener('change', function (event) {
     }
 });
 
-// Handle form submission.
+// Handle form submission for credit/debit card.
 var form = document.getElementById('StripeForm');
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -203,4 +224,5 @@ document.getElementById('subCustPayBtn').addEventListener('click', function (e) 
 window.addEventListener('popstate', function () {
     handler.close();
 });
+
 
