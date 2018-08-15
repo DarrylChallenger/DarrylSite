@@ -431,6 +431,7 @@
     <Content Include="Views\Tests\PayPalError.cshtml" />
     <Content Include="Views\Tests\AddCardForCustomer.cshtml" />
     <Content Include="Views\Tests\ArcGISMap.cshtml" />
+    <Content Include="Views\Tests\Ethereum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

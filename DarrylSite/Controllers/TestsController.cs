@@ -482,5 +482,10 @@ namespace DarrylSite.Controllers
 
             return View();
         }*/
+
+        public ActionResult Ethereum()
+        {
+            return View();
+        }
     }
 }
