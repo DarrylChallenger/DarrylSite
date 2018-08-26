@@ -1,23 +1,66 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarrylSite", "DarrylSite\DarrylSite.csproj", "{230F5005-32E2-46BA-98FE-CCA222771F0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcGISApp1", "ArcGISApp1\ArcGISApp1.csproj", "{CA7C449E-E50E-4865-AEC6-90457831C5D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Debug|ARM.Build.0 = Debug|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Debug|x64.Build.0 = Debug|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Debug|x86.Build.0 = Debug|Any CPU
 		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Release|ARM.ActiveCfg = Release|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Release|ARM.Build.0 = Release|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Release|x64.ActiveCfg = Release|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Release|x64.Build.0 = Release|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Release|x86.ActiveCfg = Release|Any CPU
+		{230F5005-32E2-46BA-98FE-CCA222771F0E}.Release|x86.Build.0 = Release|Any CPU
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Debug|ARM.ActiveCfg = Debug|ARM
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Debug|ARM.Build.0 = Debug|ARM
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Debug|ARM.Deploy.0 = Debug|ARM
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Debug|x64.ActiveCfg = Debug|x64
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Debug|x64.Build.0 = Debug|x64
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Debug|x64.Deploy.0 = Debug|x64
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Debug|x86.ActiveCfg = Debug|x86
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Debug|x86.Build.0 = Debug|x86
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Debug|x86.Deploy.0 = Debug|x86
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Release|Any CPU.ActiveCfg = Release|x86
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Release|ARM.ActiveCfg = Release|ARM
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Release|ARM.Build.0 = Release|ARM
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Release|ARM.Deploy.0 = Release|ARM
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Release|x64.ActiveCfg = Release|x64
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Release|x64.Build.0 = Release|x64
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Release|x64.Deploy.0 = Release|x64
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Release|x86.ActiveCfg = Release|x86
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Release|x86.Build.0 = Release|x86
+		{CA7C449E-E50E-4865-AEC6-90457831C5D6}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AFC31EE-F76B-489F-A81D-4CE2E167775D}
 	EndGlobalSection
 EndGlobal

@@ -137,8 +137,17 @@ namespace DarrylSite.Controllers
             {
                 var user = User.Identity;
                 ApplicationDbContext context = new ApplicationDbContext();
+                IList<string> s;
                 var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-                var s = UserManager.GetRoles(user.GetUserId());
+                try
+                {
+                    s = UserManager.GetRoles(user.GetUserId());
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+
                 if (s[0].ToString() == "Admin")
                 {
                     return true;

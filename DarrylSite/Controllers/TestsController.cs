@@ -19,6 +19,8 @@ using Newtonsoft.Json;
 using System.Text;
 using DarrylSite.Classes;
 using PayPal;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Portal;
 
 namespace DarrylSite.Controllers
 {
@@ -156,7 +158,7 @@ namespace DarrylSite.Controllers
             }
         }
 
-        public ActionResult CreateExcelFile() 
+        public ActionResult CreateExcelFile()
         {
             /*
              * https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/interop/how-to-access-office-onterop-objects
@@ -174,7 +176,7 @@ namespace DarrylSite.Controllers
             worksheet.Cells[1, 5] = "Date Header 5";
 
             // Add content?
-            worksheet.Cells[2,1] = "Row 1";
+            worksheet.Cells[2, 1] = "Row 1";
             worksheet.Cells[2, 2] = 111;
             worksheet.Cells[2, 3] = "Lots of text that goes on and on and on.";
             worksheet.Cells[2, 4] = 178.99;
@@ -271,7 +273,7 @@ namespace DarrylSite.Controllers
             ArrayModel am;
             for (int i = 1; i < 5; i++)
             {
-                am = new ArrayModel() { intCol = i, stringCol = "Hello" + i, intCol2=i*2};
+                am = new ArrayModel() { intCol = i, stringCol = "Hello" + i, intCol2 = i * 2 };
                 array.Array.Add(am);
             }
             return View(array);
@@ -289,8 +291,7 @@ namespace DarrylSite.Controllers
         {
             //StripeConstants.publicKey = ConfigurationManager.AppSettings["publicKey"];
             PaymentModel pm = new PaymentModel();
-            CartBase cart = new CartBase();
-            cart.item_list = new ItemList();
+            // Get list of cards
             return View(pm);
         }
 
@@ -337,6 +338,12 @@ namespace DarrylSite.Controllers
                     pm.StripeData.stripeError = e.StripeError;
                 }
             }
+            return View(pm);
+        }
+
+        [HttpPost]
+        public ActionResult ProcessAddCardForCustomer(PaymentModel pm)
+        {
             return View(pm);
         }
 
@@ -439,7 +446,7 @@ namespace DarrylSite.Controllers
             }
         }
 
-        public ActionResult PayPalCreatePaymentReturn(string intent, string orderId, string paymentID, string payerID, string returnUrl,string param)
+        public ActionResult PayPalCreatePaymentReturn(string intent, string orderId, string paymentID, string payerID, string returnUrl, string param)
         {
             // Success
             return View();
@@ -458,6 +465,25 @@ namespace DarrylSite.Controllers
         }
 
         public ActionResult ActiveDirectory()
+        {
+            return View();
+        }
+        /*
+        public ActionResult ArcGISMap()
+        {
+
+            Esri.ArcGISRuntime.Mapping.Map myMap = new Esri.ArcGISRuntime.Mapping.Map(Basemap.CreateImagery());
+            //Esri.ArcGISRuntime.Portal.Item item = new Esri.ArcGISRuntime.Portal.Item();
+            Basemap b = new Basemap(item);
+            myMap = new Esri.ArcGISRuntime.Mapping.Map(b);
+
+            // Assign the map to the MapView
+            //myMap.
+
+            return View();
+        }*/
+
+        public ActionResult Ethereum()
         {
             return View();
         }
